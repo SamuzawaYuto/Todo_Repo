@@ -15,15 +15,15 @@ function createNewCheckBox(checked) {
     return newCheckBox;
 }
 
-function createDeleteButton() {
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = '削除';
-    deleteButton.addEventListener('click', function(e) {
-        const taskItem = e.target.parentElement;
-        taskItem.remove();
-    });
-    return deleteButton;
-}
+// function createDeleteButton() {
+//     const deleteButton = document.createElement('button');
+//     deleteButton.textContent = '削除';
+//     deleteButton.addEventListener('click', function(e) {
+//         const taskItem = e.target.parentElement;
+//         taskItem.remove();
+//     });
+//     return deleteButton;
+// }
 
 function Delete() {
     const taskInput = document.getElementById("taskInput");
@@ -35,7 +35,7 @@ function Delete() {
     const newSpan = document.createElement('span');
     newSpan.textContent = taskInput.value;
     newTask.appendChild(newSpan);
-    newTask.appendChild(createDeleteButton()); // ここで削除ボタンを追加
+    // newTask.appendChild(createDeleteButton()); // ここで削除ボタンを追加
     todoList.appendChild(newTask);
     taskInput.value = "";
 }
@@ -61,7 +61,7 @@ function clickTodoList(e) {
     const newSpan = document.createElement('span');
     newSpan.textContent = node.textContent;
     newTask.appendChild(newSpan);
-    newTask.appendChild(createDeleteButton());
+    // newTask.appendChild(createDeleteButton());
     doneList.appendChild(newTask);
     node.remove();
 }
@@ -73,7 +73,7 @@ function clickDoneList(e) {
     const newSpan = document.createElement('span');
     newSpan.textContent = node.textContent;
     newTask.appendChild(newSpan);
-    newTask.appendChild(createDeleteButton());
+    // newTask.appendChild(createDeleteButton());
     todoList.appendChild(newTask);
     node.remove();
 }
