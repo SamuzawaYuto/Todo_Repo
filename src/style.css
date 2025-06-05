@@ -1,0 +1,10 @@
+body {
+    background-color: #eeeeee;
+}
+
+ul li {
+    list-style-type: none;
+    padding: 5px;
+    margin-bottom: 5px;
+    background: #bbddff;
+}
