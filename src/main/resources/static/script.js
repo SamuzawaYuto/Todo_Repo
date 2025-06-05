@@ -18,7 +18,7 @@ function createNewCheckBox(checked) {
 
 function submit(){
     const taskInput = document.getElementById("taskInput");
-    if(!taskinput.value){
+    if(!taskInput.value){
         return;
     }
     const newTask = docunebt.createElement('li');
