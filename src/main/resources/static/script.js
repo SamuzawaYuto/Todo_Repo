@@ -16,40 +16,53 @@ function createNewCheckBox(checked) {
     return newCheckBox;
 }
 
-function submit(){
+function submit() {
     const taskInput = document.getElementById("taskInput");
-    if(!taskInput.value){
+    if (!taskInput.value) {
         return;
     }
-    const newTask = docunebt.createElement('li');
-        newTask.appendChild(createNewCheckBox(false));
-        const newSpan = document.createElement('span');
-        newSpan.textContent = taskInput.value;
-        newTask.appendChild(newSpan);
-        todoList.appendChild(newTask);
-        taskInput.value = "";
-    
+
+    const newTask = document.createElement('li');
+    newTask.appendChild(createNewCheckBox(false));
+
+    const newSpan = document.createElement('span');
+    newSpan.textContent = taskInput.value;
+    newTask.appendChild(newSpan);
+
+    // 削除ボタンの追加
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = '削除';
+    deleteButton.onclick = function() {
+        todoList.removeChild(newTask);
+    };
+    newTask.appendChild(deleteButton);
+
+    todoList.appendChild(newTask);
+    taskInput.value = "";
 }
 
 function clickTodoList(e) {
     const node = e.target.parentElement;
-    const newTask = document.createElemnt('li');
-    newTask.appendChild(createnewCheckBox(true));
+    const newTask = document.createElement('li');
+    newTask.appendChild(createNewCheckBox(true));
+
     const newSpan = document.createElement('span');
     newSpan.textContent = node.textContent;
     newTask.appendChild(newSpan);
+
     doneList.appendChild(newTask);
     node.remove();
 }
 
-
-function clickDoneList(e){
+function clickDoneList(e) {
     const node = e.target.parentElement;
     const newTask = document.createElement('li');
-    newTaask.appendChild(createNewCheckBox(false));
+    newTask.appendChild(createNewCheckBox(false));
+
     const newSpan = document.createElement('span');
-    newSpan.textContnt = node.textContent;
+    newSpan.textContent = node.textContent;
     newTask.appendChild(newSpan);
+
     todoList.appendChild(newTask);
     node.remove();
 }
