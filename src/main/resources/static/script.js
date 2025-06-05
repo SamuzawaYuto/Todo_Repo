@@ -30,14 +30,13 @@ function submit() {
     newTask.appendChild(newCheckBox);
 
     const newSpan = document.createElement('span');
-    newSpan.textContent = taskInput.value; // ここはタスクのテキストのみにする
+    newSpan.textContent = taskInput.value;
     newTask.appendChild(newSpan);
 
-    // 削除ボタン
+    // 各タスクごとに削除ボタンを追加
     const deleteButton = document.createElement('button');
     deleteButton.textContent = '削除';
     deleteButton.onclick = function() {
-        // ここでテキストを変えないように注意
         todoList.removeChild(newTask);
     };
     newTask.appendChild(deleteButton);
