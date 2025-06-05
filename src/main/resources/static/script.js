@@ -23,21 +23,21 @@ function submit() {
     }
 
     const newTask = document.createElement('li');
-    newTask.style.display = 'flex'; // フレックスボックスで配置
-    newTask.style.alignItems = 'center'; // 垂直方向の中央揃え
+    newTask.style.display = 'flex';
+    newTask.style.alignItems = 'center';
 
     const newCheckBox = createNewCheckBox(false);
     newTask.appendChild(newCheckBox);
 
     const newSpan = document.createElement('span');
-    newSpan.textContent = taskInput.value;
-    newSpan.style.flexGrow = '1'; // スパンが可能な限り幅を取るようにする
+    newSpan.textContent = taskInput.value; // ここはタスクのテキストのみにする
     newTask.appendChild(newSpan);
 
-    // 削除ボタンの追加
+    // 削除ボタン
     const deleteButton = document.createElement('button');
     deleteButton.textContent = '削除';
     deleteButton.onclick = function() {
+        // ここでテキストを変えないように注意
         todoList.removeChild(newTask);
     };
     newTask.appendChild(deleteButton);
