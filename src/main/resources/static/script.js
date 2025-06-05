@@ -23,10 +23,15 @@ function submit() {
     }
 
     const newTask = document.createElement('li');
-    newTask.appendChild(createNewCheckBox(false));
+    newTask.style.display = 'flex'; // フレックスボックスで配置
+    newTask.style.alignItems = 'center'; // 垂直方向の中央揃え
+
+    const newCheckBox = createNewCheckBox(false);
+    newTask.appendChild(newCheckBox);
 
     const newSpan = document.createElement('span');
     newSpan.textContent = taskInput.value;
+    newSpan.style.flexGrow = '1'; // スパンが可能な限り幅を取るようにする
     newTask.appendChild(newSpan);
 
     // 削除ボタンの追加
