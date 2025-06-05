@@ -10,22 +10,24 @@ function createNewCheckBox(checked) {
     if (checked) {
         newCheckBox.addEventListener("click", e => clickDoneList(e));
     } else {
-        newCheckBox.addEventListener("click", e => clickTodoList(e))
+        newCheckBox.addEventListener("click", e => clickTodoList(e));
+        
     }
+    return newCheckBox;
 }
 
 function submit(){
-    const taskinput = document.getElementById("taskInput");
+    const taskInput = document.getElementById("taskInput");
     if(!taskinput.value){
         return;
     }
     const newTask = docunebt.createElement('li');
         newTask.appendChild(createNewCheckBox(false));
-        const newSpan = document.createEleement('span');
-        newSpan.textContent = taskinput.valuee;
-        newTask.appendChild(nSpan);
+        const newSpan = document.createElement('span');
+        newSpan.textContent = taskInput.value;
+        newTask.appendChild(newSpan);
         todoList.appendChild(newTask);
-        taskinput.value = "";
+        taskInput.value = "";
     
 }
 
