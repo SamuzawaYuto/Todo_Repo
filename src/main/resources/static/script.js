@@ -11,30 +11,28 @@ function createNewCheckBox(checked) {
         newCheckBox.addEventListener("click", e => clickDoneList(e));
     } else {
         newCheckBox.addEventListener("click", e => clickTodoList(e));
-        
     }
     return newCheckBox;
 }
 
-function submit(){
+function submit() {
     const taskInput = document.getElementById("taskInput");
-    if(!taskinput.value){
+    if (!taskInput.value) {
         return;
     }
-    const newTask = docunebt.createElement('li');
-        newTask.appendChild(createNewCheckBox(false));
-        const newSpan = document.createElement('span');
-        newSpan.textContent = taskInput.value;
-        newTask.appendChild(newSpan);
-        todoList.appendChild(newTask);
-        taskInput.value = "";
-    
-}
+    const newTask = document.createElement('li');
+    newTask.appendChild(createNewCheckBox(false));
+    const newSpan = document.createElement('span');
+    newSpan.textContent = taskInput.value;
+    newTask.appendChild(newSpan);
+    todoList.appendChild(newTask);
+    taskInput.value = "";
+} 
 
 function clickTodoList(e) {
     const node = e.target.parentElement;
-    const newTask = document.createElemnt('li');
-    newTask.appendChild(createnewCheckBox(true));
+    const newTask = document.createElement('li');
+    newTask.appendChild(createNewCheckBox(true));
     const newSpan = document.createElement('span');
     newSpan.textContent = node.textContent;
     newTask.appendChild(newSpan);
@@ -42,13 +40,12 @@ function clickTodoList(e) {
     node.remove();
 }
 
-
-function clickDoneList(e){
+function clickDoneList(e) {
     const node = e.target.parentElement;
     const newTask = document.createElement('li');
-    newTaask.appendChild(createNewCheckBox(false));
+    newTask.appendChild(createNewCheckBox(false));
     const newSpan = document.createElement('span');
-    newSpan.textContnt = node.textContent;
+    newSpan.textContent = node.textContent;
     newTask.appendChild(newSpan);
     todoList.appendChild(newTask);
     node.remove();
