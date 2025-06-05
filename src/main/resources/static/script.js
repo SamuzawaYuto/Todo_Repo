@@ -38,6 +38,7 @@ function submit() {
     deleteButton.textContent = '削除';
     deleteButton.style.marginLeft = 'auto';  // ボタンを右側に配置するためのスタイル
     deleteButton.onclick = function() {
+        alert('削除ボタンが押されました');  // デバッグ用アラート
         todoList.removeChild(newTask);
     };
     newTask.appendChild(deleteButton);
