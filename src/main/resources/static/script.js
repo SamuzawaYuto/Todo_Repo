@@ -33,9 +33,10 @@ function submit() {
     newSpan.textContent = taskInput.value;
     newTask.appendChild(newSpan);
 
-    // 各タスクごとに削除ボタンを追加
+    // 削除ボタンを作成
     const deleteButton = document.createElement('button');
     deleteButton.textContent = '削除';
+    deleteButton.style.marginLeft = 'auto';  // ボタンを右側に配置するためのスタイル
     deleteButton.onclick = function() {
         todoList.removeChild(newTask);
     };
