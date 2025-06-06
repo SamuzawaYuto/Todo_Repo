@@ -1,74 +1,57 @@
-'use strict';
+let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
 
-const todoList = document.getElementById('todoList');
-const doneList = document.getElementById('doneList');
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
-function createNewCheckBox(checked) {
-    const newCheckBox = document.createElement("input");
-    newCheckBox.type = "checkbox";
-    newCheckBox.checked = checked;
-    if (checked) {
-        newCheckBox.addEventListener("click", e => clickDoneList(e));
+function render() {
+  const todoList = document.getElementById("todo-list");
+  const doneList = document.getElementById("done-list");
+  todoList.innerHTML = "";
+  doneList.innerHTML = "";
+
+  tasks.forEach((task, index) => {
+    const div = document.createElement("div");
+    div.className = "task";
+    div.textContent = task.title;
+    div.onclick = () => showDetail(index);
+    if (task.done) {
+      doneList.appendChild(div);
     } else {
-        newCheckBox.addEventListener("click", e => clickTodoList(e));
-        
+      todoList.appendChild(div);
     }
-    return newCheckBox;
+  });
 }
 
-function submit() {
-    const taskInput = document.getElementById("taskInput");
-    if (!taskInput.value) {
-        return;
-    }
-
-    const newTask = document.createElement('li');
-    newTask.style.display = 'flex';
-    newTask.style.alignItems = 'center';
-
-    const newCheckBox = createNewCheckBox(false);
-    newTask.appendChild(newCheckBox);
-
-    const newSpan = document.createElement('span');
-    newSpan.textContent = taskInput.value;
-    newTask.appendChild(newSpan);
-
-    // 削除ボタンを作成
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = '削除';
-    deleteButton.style.marginLeft = 'auto';  // ボタンを右側に配置するためのスタイル
-    deleteButton.onclick = function() {
-        alert('削除ボタンが押されました');  // デバッグ用アラート
-        todoList.removeChild(newTask);
-    };
-    newTask.appendChild(deleteButton);
-
-    todoList.appendChild(newTask);
-    taskInput.value = "";
+function showView(id) {
+  document.querySelectorAll(".view").forEach(v => v.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
 }
 
-function clickTodoList(e) {
-    const node = e.target.parentElement;
-    const newTask = document.createElement('li');
-    newTask.appendChild(createNewCheckBox(true));
-
-    const newSpan = document.createElement('span');
-    newSpan.textContent = node.textContent;
-    newTask.appendChild(newSpan);
-
-    doneList.appendChild(newTask);
-    node.remove();
+function showDetail(index) {
+  const task = tasks[index];
+  document.getElementById("detail-title").textContent = task.title;
+  document.getElementById("detail-note").textContent = task.note;
+  showView("detail-view");
 }
 
-function clickDoneList(e) {
-    const node = e.target.parentElement;
-    const newTask = document.createElement('li');
-    newTask.appendChild(createNewCheckBox(false));
+document.getElementById("go-add").onclick = () => showView("add-view");
+document.getElementById("back-home").onclick = () => showView("home-view");
+document.getElementById("back-detail-home").onclick = () => showView("home-view");
 
-    const newSpan = document.createElement('span');
-    newSpan.textContent = node.textContent;
-    newTask.appendChild(newSpan);
+document.getElementById("add-task").onclick = () => {
+  const title = document.getElementById("new-title").value.trim();
+  const note = document.getElementById("new-note").value.trim();
+  if (!title) {
+    alert("タイトルを入力してください");
+    return;
+  }
+  tasks.push({ title, note, done: false });
+  saveTasks();
+  document.getElementById("new-title").value = "";
+  document.getElementById("new-note").value = "";
+  showView("home-view");
+  render();
+};
 
-    todoList.appendChild(newTask);
-    node.remove();
-}
+render();

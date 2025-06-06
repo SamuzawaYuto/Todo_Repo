@@ -4,13 +4,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-
 @Controller
-@RequestMapping("/Todo")
 public class TodoController {
-    
-    @GetMapping
-    public String TodoList() {
-        return "index";
+
+    @GetMapping({"/", "/add", "/detail"})
+    public String serveIndex() {
+        return "forward:/index.html";
     }
 }
