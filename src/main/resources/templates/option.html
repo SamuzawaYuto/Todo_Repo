@@ -1,1 +1,61 @@
 <!--設定画面-->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>option</title>
+  <link rel="stylesheet" href="/style.css" type="text/css" media="screen">
+</head>
+
+<body>
+  
+  <nav>
+  <ul id = "homebar">
+
+    <li><a href="#" id = "homeMenu">HOME</a></li>
+    <li><a href="#" id = "homeMenu">登録</a></li>
+    <li><a href="#" id = "homeMenu">削除</a></li>
+    <li><a href="#" id = "homeMenu"class="white">設定</a></li>
+  </ul>
+</nav>
+  
+    <p  class= "head_message">設定</p>
+  
+  <div id = "option_position">
+  <div class = "Option">
+    ユーザーID： 設定したユーザーIDを表示
+  </div>
+  
+  <div class = "Option">
+    <label for = "user_name">ユーザー名：</label>
+    <input type = "text", id = "user_name" name = "user_name" value="名無し(全角10字以下)" />
+  </div>
+  
+  <div class = "Option">
+  	<label>
+  		<input type="checkbox"> 削除確認
+		</label>
+   </div>
+  
+  <div class = "Option">
+    
+<label for="select-box">カラー：</label>
+    
+<select id="select-box" name="animal">
+  <option value="pastel">パステルカラー</option>
+  <option value="color2">カラー2</option>
+  <option value="color3">カラー3</option>
+</select>
+  </div>
+    </div>
+  
+<script src="/script.js" type="text/javascript"></script>
+  
+  <footer>
+   <p>@GAKU-todo</p>
+   </footer>
+
+
+</body>
+</html>

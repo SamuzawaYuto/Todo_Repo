@@ -9,7 +9,7 @@ import java.time.LocalTime;
  public class Todo {
    private long todoId;
    private String title;
-   private int frag;
+   private boolean frag;
    private long taskId;
    @DateTimeFormat(pattern = "yyyy-MM-dd")
    private LocalDate date;

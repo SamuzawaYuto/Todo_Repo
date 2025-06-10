@@ -1,6 +1,5 @@
 <!--ホーム画面.1-->
 
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -12,16 +11,16 @@
 <body>
   
   <nav>
-  <ul>
+  <ul id = "homebar">
 
-    <li><a href="#">HOME</a></li>
-    <li><a href="#">登録</a></li>
-    <li><a href="#">削除</a></li>
-    <li><a href="#">設定</a></li>
+    <li><a href="#"class="white" id = "homeMenu">HOME</a></li>
+    <li><a href="#" id = "homeMenu">登録</a></li>
+    <li><a href="#" id = "homeMenu">削除</a></li>
+    <li><a href="#" id = "homeMenu">設定</a></li>
   </ul>
 </nav>
   
-    <p class = "head_message">ホーム</p>
+    <p  class= "head_message">ホーム</p>
   
   
   <!--
@@ -32,15 +31,20 @@
     </div>
 -->
 
-    <div id="todoListWrapper">
-        <h1>ToDo List</h1>
+    <div> <!--id ="todoListWrapper"-->
+        <h1 class="ListStyle">ToDo List</h1>
         <ul id="todoList">
             <!-- <input type="button" id="deleteButton" value="削除" onclick="Delete()"/> -->
+                    <li>
+            <input type="checkbox" id="studyCheckbox">
+            <a href="#"　id = "Listanker">study</a>
+          </li>
+          <!--<li><input type ="checkbox" onclick="clickTodoList(event)" />study</li>-->
         </ul>
     </div>
 
-    <div id="doneListWrapper">
-        <h1>Done List</h1>
+    <div> <!--id="doneListWrapper"-->
+        <h1 class="ListStyle">Done List</h1>
         <ul id="doneList">
             <!-- <input type="button" id="deleteButton" value="削除" onclick="Delete()"/> -->
         </ul>

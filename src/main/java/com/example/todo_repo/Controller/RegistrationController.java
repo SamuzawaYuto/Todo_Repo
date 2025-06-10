@@ -1,11 +1,35 @@
 package com.example.todo_repo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.todo_repo.entity.User;
+import com.example.todo_repo.form.UserForm;
+import com.example.todo_repo.service.UserService;
+
 @Controller
-@RequestMapping("/registration")
+@RequestMapping("/user")
 public class RegistrationController {
-    
+    private final UserService userService;
+
+    public RegistrationController(UserService userService){
+        this.userService = userService;
+    }
+
+    @GetMapping("/new")
+    public String showRegistrationForm(Model model){
+        UserForm userForm = new UserForm();
+        model.addAttribute("userForm", userForm);
+        return "user/user-form";
+    }
+
+    @PostMapping("/new")
+    public String registerUser(UserForm userForm){
+        userService.createUser(userForm);
+        return "redirect:/user";
+    }
 
 }

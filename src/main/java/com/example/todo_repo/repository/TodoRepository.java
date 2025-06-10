@@ -12,4 +12,13 @@ package com.example.todo_repo.repository;
    public List<Todo> getAllTodos() {
        return todoMapper.selectAllTodos();
    }
+   public void insertTodo(Todo todo) {
+       todoMapper.insertTodo(todo);
+   }
+   public Todo getTodoId(long taskId) {
+       return todoMapper.selectTodoId(taskId);
+   }
+   public void deleteTodo(long taskId) {
+       todoMapper.deleteTodoById(taskId);
+   }
  }
