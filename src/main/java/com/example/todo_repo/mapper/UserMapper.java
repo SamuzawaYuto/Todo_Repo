@@ -1,5 +1,17 @@
 package com.example.todo_repo.mapper;
 
-public class UserMapper {
-    
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+
+@Mapper
+public interface UserMapper {
+    @Select("SELECT * FROM users WHERE user_id = #{user_id}") 
+    User selectUserByUserId(String userId);
+
+    @Insert("INSERT INTO users (user_id, password, user_name) VALUES (#{user_id}, #{password}, #{user_name})") 
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    void insertUser(com.example.todo_repo.entity.User user);
 }

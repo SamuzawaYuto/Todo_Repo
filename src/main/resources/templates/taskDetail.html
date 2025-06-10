@@ -1,1 +1,58 @@
 <!--タスク詳細-->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>taskDetail</title>
+  <link rel="stylesheet" href="/style.css" type="text/css" media="screen">
+</head>
+
+<body>
+  
+<nav>
+  <ul id = "homebar">
+
+    <li><a href="#" id = "homeMenu">HOME</a></li>
+    <li><a href="#" id = "homeMenu">登録</a></li>
+    <li><a href="#" id = "homeMenu">削除</a></li>
+    <li><a href="#"class="white" id = "homeMenu">設定</a></li>
+  </ul>
+</nav>
+  
+    <p  class= "head_message">タスク詳細</p><!--p要素に変更-->
+  
+  
+     <div id = "registrationForm">
+  
+    <label for = "title" >タイトル : </label>
+    <input type ="text" id ="title" name="title" size = "50" value="課題提出" required/><br><br>
+    
+    <label for = "date" >　　日時 :</label>
+    <input type ="date" id ="date" name="date" value="2030-01-01"/>
+    <input type ="time" id ="time" name="time" value="12:05"/><br><br>
+    
+
+    <label for = "area">　　場所 : </label>
+    <input type ="text" id = "area" name = "area" size = "50" value="サイバーコム株式会社"/><br><br>
+    
+    <label for = "url">　　URL : </label>
+    <input type ="url" id = "url" name = "url" size = "50" /><br><br>
+    
+    <label for = "memo">　　メモ : </label>
+    <textarea id = "memo" name="memo" rows="5" cols="40" value="テキストボックス">今年の抱負の提出</textarea><br><br>
+   </div>
+  
+    <div id = Detail_return>
+  <button class = "return_detail" onclick="location.href='遷移したいページ等のURL'">戻る</button>
+  </div>
+
+<script src="/script.js" type="text/javascript"></script>
+  
+  <footer>
+   <p>@GAKU-todo</p>
+   </footer>
+
+
+</body>
+</html>

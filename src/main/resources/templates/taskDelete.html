@@ -1,1 +1,46 @@
 <!--削除機能.3-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title><!--ここにタブのタイトル部分--></title>
+  <link rel="stylesheet" href="/style.css" type="text/css" media="screen">
+</head>
+
+<body>
+  
+<nav>
+  <ul id = "homebar">
+
+    <li><a href="#" id = "homeMenu">HOME</a></li>
+    <li><a href="#" id = "homeMenu">登録</a></li>
+    <li><a href="#" id = "homeMenu" class="white">削除</a></li>
+    <li><a href="#" id = "homeMenu">設定</a></li>
+  </ul>
+</nav>
+  
+    <p  class= "head_message">削除選択画面</p>
+		<div> <!--id ="todoListWrapper"-->
+        <h1 class="ListStyle">ToDo List</h1>
+        <ul id="todoList">
+            <!-- <input type="button" id="deleteButton" value="削除" onclick="Delete()"/> -->
+          <li><input type ="checkbox">study</li>
+          <!--<li><input type ="checkbox" onclick="clickTodoList(event)" />study</li>-->
+        </ul>
+    </div>
+
+    <div> <!--id="doneListWrapper"-->
+        <h1 class="ListStyle">Done List</h1>
+        <ul id="doneList">
+            <!-- <input type="button" id="deleteButton" value="削除" onclick="Delete()"/> -->
+        </ul>
+    </div>
+<script src="/script.js" type="text/javascript"></script>
+
+  <footer>
+   <p>@GAKU-todo</p>
+   </footer>
+
+
+</body>
+</html>

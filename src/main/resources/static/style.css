@@ -15,14 +15,19 @@ li {
   display: inline;
 }
 
-a {
+#homeMenu {
   display: block;
   text-decoration: none;
   color: #696969;
   margin-right: 50px;
+  margin-top: 20px;
 }
 
-ul {
+#Listanker{
+  color: blue;
+}
+
+#homebar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -30,6 +35,7 @@ ul {
 }
 
 .head_message{
+  font-weight: bold;
   position: absolute;
   top: 0;
   transform: translate(10%, -70%);
@@ -55,4 +61,139 @@ footer {
   font-size: 20px;
   height: 100px;
   box-sizing: border-box;
+}
+
+textarea{
+    vertical-align:top;
+    font-size: 120%;
+}
+
+.ListStyle{
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.90em;
+    margin-inline-start: 100px;
+    font-weight: bold;
+     /*以下箱*/
+    border: solid 8px green;
+    background-color: #98fb98;
+    line-height: 100px;
+    width: 10%;
+}
+
+#todoList{
+  background-color: #98fb98;
+  margin-left: 100px;
+  font-size: 20px;
+  
+   list-style: none;
+    margin-bottom: 5px;
+}
+
+#registrationForm{
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  height: 400px;
+  font-size: 20px;
+  height: 100px;
+}
+
+.return{
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid green;
+  background-color: #98fb98;
+  margin-top: 10px;
+  font-size: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.return:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.register {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid green;
+  background-color: #98fb98;
+  margin-top: 20px;
+  font-size: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.register:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+.loginbutton{
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid green;
+  background-color: #98fb98;
+  margin-top: 20px;
+  font-size: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.loginbutton:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+#register_registerButtonPosition{
+position: absolute;
+  left: 43%;
+  top: 65%;
+}
+#createaccountButtonPosition{
+  position: absolute;
+  left: 80%;
+  top: 75%;
+}
+.white{
+  color:#767676;
+}
+input{
+   font-size: 120%;
+}
+
+#Detail_return{
+  position: absolute;
+  left: 68%;
+  top: 80%;
+}
+
+.return_detail{
+    box-sizing: border-box;
+    width: 100px;
+    padding: 2px;
+    border: 5px solid green;
+    background-color: #98fb98;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.Option{
+  color: #696969;
+  background-color: #98fb98;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  width: 700px;
+}
+
+#option_position{
+    position: absolute;
+    left: 10%;
+    top: 15%;
+}
+
+select{
+  font-size: 20px;
 }

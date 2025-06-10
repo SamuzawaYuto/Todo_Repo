@@ -1,6 +1,9 @@
 package com.example.todo_repo.form;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import lombok.Data;
 
-
+@Data
 public class TodoForm {
     private String title;
     private LocalDate date;
