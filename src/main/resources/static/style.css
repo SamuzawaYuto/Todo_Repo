@@ -75,19 +75,21 @@ textarea{
     margin-inline-start: 100px;
     font-weight: bold;
      /*以下箱*/
-    border: solid 8px green;
+    border: solid 8px #3fde3f;
     background-color: #98fb98;
-    line-height: 100px;
+  　line-height: 100px;
     width: 10%;
 }
 
 #todoList{
+
   background-color: #98fb98;
   margin-left: 100px;
   font-size: 20px;
   
    list-style: none;
     margin-bottom: 5px;
+  margin-right: 300px;
 }
 
 #registrationForm{
@@ -100,16 +102,14 @@ textarea{
 }
 
 .return{
-  box-sizing: border-box;
-  width: 200px;
-  padding: 20px;
-  border: 5px solid green;
-  background-color: #98fb98;
-  margin-top: 10px;
-  font-size: 30px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
+    border-radius: 45px;
+    box-sizing: border-box;
+    width: 200px;
+    padding: 20px;
+    border: 5px solid #3fde3f;
+    background-color: #98fb98;
+    margin-top: 10px;
+    font-size: 30px;
 }
 .return:hover {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
@@ -120,13 +120,11 @@ textarea{
   box-sizing: border-box;
   width: 200px;
   padding: 20px;
-  border: 5px solid green;
+  border: 5px solid #3fde3f;
   background-color: #98fb98;
   margin-top: 20px;
   font-size: 30px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  border-radius: 45px;
 }
 .register:hover {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
@@ -135,7 +133,7 @@ textarea{
   box-sizing: border-box;
   width: 200px;
   padding: 20px;
-  border: 5px solid green;
+  border: 5px solid #3fde3f;
   background-color: #98fb98;
   margin-top: 20px;
   font-size: 30px;
@@ -147,10 +145,12 @@ textarea{
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 #register_registerButtonPosition{
+
 position: absolute;
   left: 43%;
-  top: 65%;
+  top: 73%;
 }
+
 #createaccountButtonPosition{
   position: absolute;
   left: 80%;
@@ -173,10 +173,11 @@ input{
     box-sizing: border-box;
     width: 100px;
     padding: 2px;
-    border: 5px solid green;
+    border: 5px solid #3fde3f;
     background-color: #98fb98;
     margin-top: 10px;
     font-size: 20px;
+  border-radius: 45px;
 }
 
 .Option{

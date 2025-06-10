@@ -4,7 +4,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+import com.example.todo_repo.entity.User;
+
 
 @Mapper
 public interface UserMapper {

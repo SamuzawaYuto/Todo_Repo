@@ -23,10 +23,10 @@ import org.springframework.stereotype.Service;
        todo.setUrl(todoForm.getUrl());
        todoRepository.insertTodo(todo);
    }
-   public Todo getTodoById(long todoId) {
-    return todoRepository.getTodoId(todoId);
+   public Todo getTodoById(long taskId) {
+    return todoRepository.getTodoId(taskId);
    }
-   public void deleteTodo(long todoId) {
-    todoRepository.deleteTodo(todoId);
+   public void deleteTodo(long taskId) {
+    todoRepository.deleteTodo(taskId);
    }
  }
