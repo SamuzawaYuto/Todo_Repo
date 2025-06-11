@@ -15,10 +15,11 @@ import org.apache.ibatis.annotations.Select;
    @Insert("INSERT INTO todo (title, date, time, area, url) VALUES (#{title}, #{date}, #{time}, #{area}, #{url})")
    @Options(useGeneratedKeys = true, keyProperty = "todoId")
    void insertTodo(Todo todo);
-
+/*
    @Select("SELECT * FROM todo WHERE task_id = #{taskId}")
    Todo selectTodoId(long taskId);
 
    @Delete("DELETE FROM todo WHERE task_id = #{taskId}")
    void deleteTodoById(long taskId);
+   */
  }
