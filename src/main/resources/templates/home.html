@@ -43,6 +43,19 @@
         </ul>
     </div>
 
+    <!--awdawd-->
+<div> 
+    <h1 class="ListStyle">ToDo List</h1>
+    <ul id="todoList">
+        <li th:each="todo : ${todos}">
+        <!--ここ分からん<a th:href="@{/taskDetail/{id}(id=${todo.id})}" th:text="${todo.title}">todo title</a>-->
+            <span th:text="${todo.title}">todo title</span>
+        </li>
+    </ul>
+</div>
+
+
+
     <div> <!--id="doneListWrapper"-->
         <h1 class="ListStyle">Done List</h1>
         <ul id="doneList">

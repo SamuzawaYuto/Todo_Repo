@@ -30,6 +30,7 @@ public class TodoController {
     @GetMapping("/new")
     public String todoForm(Model model) {
         TodoForm todoForm = new TodoForm();
+        model.addAttribute("todoForm", todoForm);
         return "todo/todo-list";
     }
 
@@ -38,11 +39,11 @@ public class TodoController {
        todoService.createTodo(todoForm);
        return "redirect:/todo";
    }
-
+/*
    @GetMapping("/{todoId}")
    public String todo(@PathVariable long taskId, Model model) {  
     Todo todo = todoService.getTodoById(taskId);
-    List//途中
+    
    }
 
     @PostMapping("/{todoId}/delete")
@@ -52,7 +53,15 @@ public class TodoController {
     }
 
     public String createTaskForm(@PathVariable long taskId, TaskForm taskForm) {
-        //途中です
+        
     }
 
+    public String createTask(@PathVariable long taskId, TaskForm taskForm) {
+    
+    }
+
+    public String deleteTask(@PathVariable long taskId) {
+    
+    }
+*/
  }
