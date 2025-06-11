@@ -41,13 +41,13 @@ public class TodoController {
        return "redirect:/todo";
    }
 /*
-   @GetMapping("/{todoId}")
+   @GetMapping("/{taskId}")//task詳細に飛ぶ
    public String todo(@PathVariable long taskId, Model model) {  
     Todo todo = todoService.getTodoById(taskId);
     
    }
 
-    @PostMapping("/{todoId}/delete")
+    @PostMapping("/{taskId}/delete")
     public String deleteTodo(@PathVariable long taskId) {
         todoService.deleteTodo(taskId);
         return "redirect:/todo";
