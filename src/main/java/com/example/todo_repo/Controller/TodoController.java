@@ -44,6 +44,7 @@ public class TodoController {
    @GetMapping("/{taskId}")//task詳細に飛ぶ
    public String todo(@PathVariable long taskId, Model model) {  
     Todo todo = todoService.getTodoById(taskId);
+
     
    }
 
