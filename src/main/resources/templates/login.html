@@ -1,37 +1,23 @@
-<!--ログイン画面-->
 <!DOCTYPE html>
-<html lang="ja" xmlns:th="http://www.thymleaf.org">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Login page</title>
-  <link rel="stylesheet" th:href="@{/static/style.css}" type="text/css" media="screen">
-
-</head>
-  
-
-
-<body>
-  <nav>
-  </nav>
-  
-   <p class = "head_message">ログイン</p>
-  
-  <div class = "loginform">
-    <label for = "user_Id" >ユーザーID: </label>
-    <input type ="text" id ="user_Id" name="user_Id" size = "50"/><br><br>
-
-    <label for = "password">パスワード: </label>
-    <input type ="text" id = "password" name = "password" size = "50"/>
+ <html lang="ja" xmlns:th="http://www.thymeleaf.org">
+ <head th:replace="~{layout :: head(ログイン)}"></head>
+ <body>
+    <div th:replace="~{layout :: header}"></div>
+    <h3>ログイン</h3>
+    <div th:if="${param.error}" style="color:red">
+        ユーザ名、またはパスワードが違います
     </div>
-  	<div id = "register_registerButtonPosition">
-  		<button class = "loginbutton" onclick="location.href='home.html'">ログイン</button>
-    </div>
-  	<div id = "createaccountButtonPosition">
-  		<button class = "loginbutton" onclick="location.href='userRegistration.html'">新規登録</button>
-    </div>
-</body>
-  <footer>
-   <p>@GAKU-todo</p>
-   </footer>
-
-</html>
+    <form th:action="@{/login}" method="post">
+        <div>
+            <label for="username">ユーザ名：</label>
+            <input type="text" id="username" name="Admin2025">
+        </div>
+        <div>
+            <label for="password">パスワード：</label>
+            <input type="password" id="password" name="Admin2025">
+        </div>
+        <button type="submit">ログイン</button>
+    </form>
+    <div th:replace="~{layout :: footer}"></div>
+ </body>
+ </html>
