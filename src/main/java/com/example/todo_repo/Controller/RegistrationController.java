@@ -23,7 +23,7 @@ public class RegistrationController {
     public String showRegistrationForm(Model model){
         UserForm userForm = new UserForm();
         model.addAttribute("userForm", userForm);
-        return "user/user-form";
+        return "user/userRegistration";
     }
 
     @PostMapping("/new")
