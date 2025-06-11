@@ -25,20 +25,20 @@ public class TodoController {
     public String todos(Model model) {
         List<Todo> todos = todoService.getAllTodos();
         model.addAttribute("todos", todos);
-        return "todo/todo-list";
+        return "todo/home";
     }
 
     @GetMapping("/new")
     public String todoForm(Model model) {
         TodoForm todoForm = new TodoForm();
         model.addAttribute("todoForm", todoForm);
-        return "todo/todo-list";
+        return "todo/taskRegistration";
     }
 
    @PostMapping("/new")
    public String createTodo(TodoForm todoForm) {
        todoService.createTodo(todoForm);
-       return "redirect:/todo";
+       return "redirect:/todos";
    }
 /*
    @GetMapping("/{taskId}")//task詳細に飛ぶ
