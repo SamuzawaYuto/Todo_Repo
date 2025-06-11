@@ -15,4 +15,4 @@ public class UserRepository {
     public void insertUser(User user){
         userMapper.insertUser(user);
     }
-}
+} 
