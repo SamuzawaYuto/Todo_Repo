@@ -28,8 +28,8 @@ import org.springframework.stereotype.Service;
    public Todo getTodoById(long todoId) {
     return todoRepository.getTodoId(todoId);
    }
-//    public void deleteTodo(long taskId) {
-//     todoRepository.deleteTodo(taskId);
-//    }
+   public void deleteTodo(long taskId) {
+    todoRepository.deleteTodo(taskId);
+   }
    
  }

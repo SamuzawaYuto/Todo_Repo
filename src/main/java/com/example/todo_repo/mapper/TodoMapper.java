@@ -18,8 +18,8 @@ import org.apache.ibatis.annotations.Select;
 
    @Select("SELECT * FROM todos WHERE todo_id = #{todoId}")
    Todo selectTodoById(long todoId);
-/*
+
    @Delete("DELETE FROM todo WHERE task_id = #{taskId}")
    void deleteTodoById(long taskId);
-   */
+  
  }
