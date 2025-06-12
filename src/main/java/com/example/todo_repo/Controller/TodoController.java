@@ -41,7 +41,7 @@ public class TodoController {
        return "redirect:/todos";
    }
 
-   @GetMapping("/{taskId}")//task詳細に飛ぶ
+   @GetMapping("/{taskId}")//task詳細に飛ぶよ
    public String todo(@PathVariable long taskId, Model model) {  
     Todo todo = todoService.getTodoById(taskId);
     model.addAttribute("todo", todo);
