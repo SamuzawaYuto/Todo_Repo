@@ -21,14 +21,15 @@ import org.springframework.stereotype.Service;
        todo.setTime(todoForm.getTime());
        todo.setArea(todoForm.getArea());
        todo.setUrl(todoForm.getUrl());
+       todo.setMemo(todoForm.getMemo());
        todoRepository.insertTodo(todo);
    }
-   /*
-   public Todo getTodoById(long taskId) {
-    return todoRepository.getTodoId(taskId);
+   
+   public Todo getTodoById(long todoId) {
+    return todoRepository.getTodoId(todoId);
    }
-   public void deleteTodo(long taskId) {
-    todoRepository.deleteTodo(taskId);
-   }
-   */
+//    public void deleteTodo(long taskId) {
+//     todoRepository.deleteTodo(taskId);
+//    }
+   
  }

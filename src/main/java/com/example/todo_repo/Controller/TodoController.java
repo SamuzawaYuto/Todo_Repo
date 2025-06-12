@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 @Controller
-@RequestMapping("/todos")
+@RequestMapping("/home")
 public class TodoController {
     private final TodoService todoService;
 
@@ -38,22 +38,22 @@ public class TodoController {
    @PostMapping("/new")
    public String createTodo(TodoForm todoForm) {
        todoService.createTodo(todoForm);
-       return "redirect:/todos";
+       return "redirect:/home";
    }
+
+   @GetMapping("/{todoId}")//task詳細に飛ぶ
+   public String todo(@PathVariable long todoId, Model model) {  
+        Todo todo = todoService.getTodoById(todoId);
+        model.addAttribute("todo", todo);
+        return "todo/taskDetail";
+   }
+
+    // @PostMapping("/{taskId}/delete")
+    // public String deleteTodo(@PathVariable long taskId) {
+    //     todoService.deleteTodo(taskId);
+    //     return "redirect:/todo";
+    // }
 /*
-   @GetMapping("/{taskId}")//task詳細に飛ぶ
-   public String todo(@PathVariable long taskId, Model model) {  
-    Todo todo = todoService.getTodoById(taskId);
-
-    
-   }
-
-    @PostMapping("/{taskId}/delete")
-    public String deleteTodo(@PathVariable long taskId) {
-        todoService.deleteTodo(taskId);
-        return "redirect:/todo";
-    }
-
     public String createTaskForm(@PathVariable long taskId, TaskForm taskForm) {
         
     }

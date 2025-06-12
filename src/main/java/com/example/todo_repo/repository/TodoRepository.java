@@ -15,12 +15,14 @@ package com.example.todo_repo.repository;
    public void insertTodo(Todo todo) {
        todoMapper.insertTodo(todo);
    }
-   /*
-   public Todo getTodoId(long taskId) {
-       return todoMapper.selectTodoId(taskId);
+   
+   
+   public Todo getTodoId(long todoId) {
+       return todoMapper.selectTodoById(todoId);
    }
-   public void deleteTodo(long taskId) {
-       todoMapper.deleteTodoById(taskId);
-   }
-   */
+   
+//    public void deleteTodo(long taskId) {
+//        todoMapper.deleteTodoById(taskId);
+//    }
+   
  }
