@@ -14,7 +14,7 @@
   <ul id = "homebar">
 
     <li><a href="#"class="white" id = "homeMenu">HOME</a></li>
-    <li><a href="#" id = "homeMenu">登録</a></li>
+    <li><a href="home/new" id = "homeMenu">登録</a></li>
     <li><a href="#" id = "homeMenu">削除</a></li>
     <li><a href="#" id = "homeMenu">設定</a></li>
   </ul>
@@ -23,33 +23,25 @@
     <p  class= "head_message">ホーム</p>
   
   
-  <!--
-    <div id="formWrapper">
-        <label for="taskInput">今日やるべきタスクを入力してください</label>
-        <input type="text" id="taskInput" name="taskInput" />
-        <input type="button" id="submitButton" value="登録" onclick="submit()" />
-    </div>
--->
+  
 
-    <div> <!--id ="todoListWrapper"-->
-        <h1 class="ListStyle">ToDo List</h1>
-        <ul id="todoList">
+    <!--<div> id ="todoListWrapper"-->
+        <!--<h1 class="ListStyle">ToDo List</h1>-->
+        <!--<ul id="todoList">-->
             <!-- <input type="button" id="deleteButton" value="削除" onclick="Delete()"/> -->
-                    <li>
+                    <!--<li>
             <input type="checkbox" id="studyCheckbox">
-            <a href="#"　id = "Listanker">study</a>
-          </li>
+            <a href="#" id = "Listanker">study</a>
+          </li>-->
           <!--<li><input type ="checkbox" onclick="clickTodoList(event)" />study</li>-->
-        </ul>
-    </div>
+        <!--</ul>
+    </div>-->
 
-    <!--awdawd-->
 <div> 
     <h1 class="ListStyle">ToDo List</h1>
     <ul id="todoList">
         <li th:each="todo : ${todos}">
-        <!--ここ分からん<a th:href="@{/taskDetail/{id}(id=${todo.id})}" th:text="${todo.title}">todo title</a>-->
-            <span th:text="${todo.title}">todo title</span>
+            <a th:href="@{/home/{todoId}(todoId=${todo.todoId})}"><span th:text="${todo.title}">todo title</span></a>
         </li>
     </ul>
 </div>

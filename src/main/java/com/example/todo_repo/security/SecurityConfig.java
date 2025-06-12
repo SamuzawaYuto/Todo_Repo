@@ -20,7 +20,7 @@ public class SecurityConfig {
     .formLogin(login -> login
         .loginProcessingUrl("/login")
         .loginPage("/login")
-        .defaultSuccessUrl("/todos")
+        .defaultSuccessUrl("/home")
         .failureUrl("/login?error")
         .permitAll()
     );
