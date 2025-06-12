@@ -16,11 +16,12 @@ li {
 }
 
 #homeMenu {
-  display: block;
-  text-decoration: none;
-  color: #696969;
-  margin-right: 50px;
-  margin-top: 20px;
+display: block;
+    text-decoration: none;
+    color: #696969;
+    margin-right: 50px;
+    margin-top: -11px;
+    font-size: 30px;
 }
 
 #Listanker{
@@ -74,10 +75,10 @@ textarea{
     margin-block-start: 0.90em;
     margin-inline-start: 100px;
     font-weight: bold;
-     /*以下箱*/
+    /*以下箱*/
     border: solid 8px #3fde3f;
     background-color: #98fb98;
-    /*line-height: 100px;*/
+    line-height: 100px;
     width: 10%;
 }
 
@@ -90,6 +91,11 @@ textarea{
    list-style: none;
     margin-bottom: 5px;
   margin-right: 300px;
+}
+
+#todoList li {
+  margin-bottom: 5px; /* 各アイテムの間にスペースを作ります */
+  display: block;
 }
 
 #registrationForm{
@@ -151,7 +157,7 @@ position: absolute;
   top: 73%;
 }
 
-#createaccountButtonPosition{
+#createAccountButtonPosition{
   position: absolute;
   left: 80%;
   top: 75%;

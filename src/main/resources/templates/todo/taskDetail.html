@@ -26,7 +26,7 @@
      <div id = "registrationForm">
   
     <label for = "title" >タイトル : </label>
-    <input type ="text" id ="title" name="title" size = "50" value="${todo.title}" required/><br><br>
+    <input type ="text" id ="title" name="title" size = "50" th:value="${todo.title}" required/><br><br>
     
     <label for = "date" >　　日時 :</label>
     <input type ="date" id ="date" name="date" th:value="${todo.date}"/>
