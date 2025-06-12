@@ -21,8 +21,8 @@ package com.example.todo_repo.repository;
        return todoMapper.selectTodoById(todoId);
    }
    
-//    public void deleteTodo(long taskId) {
-//        todoMapper.deleteTodoById(taskId);
-//    }
+   public void deleteTodo(long taskId) {
+       todoMapper.deleteTodoById(taskId);
+   }
    
  }
