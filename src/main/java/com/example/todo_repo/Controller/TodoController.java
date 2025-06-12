@@ -40,12 +40,12 @@ public class TodoController {
        todoService.createTodo(todoForm);
        return "redirect:/todos";
    }
-/*
+
    @GetMapping("/{taskId}")//task詳細に飛ぶ
    public String todo(@PathVariable long taskId, Model model) {  
     Todo todo = todoService.getTodoById(taskId);
-
-    
+    model.addAttribute("todo", todo);
+    return "todo/taskDetail";
    }
 
     @PostMapping("/{taskId}/delete")
@@ -53,7 +53,7 @@ public class TodoController {
         todoService.deleteTodo(taskId);
         return "redirect:/todo";
     }
-
+/* 
     public String createTaskForm(@PathVariable long taskId, TaskForm taskForm) {
         
     }
