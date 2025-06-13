@@ -24,7 +24,7 @@
   
   <div id = "option_position">
   <div class = "Option">
-    ユーザーID： 設定したユーザーIDを表示
+    <p>ユーザーID： <span th:text="${userId}">Default ID</span></p>
   </div>
   
   <div class = "Option">
@@ -38,15 +38,15 @@
 		</label>
    </div>
   
-  <div class = "Option">
     
-<label for="select-box">カラー：</label>
-    
-<select id="select-box" name="animal">
-  <option value="pastel">パステルカラー</option>
-  <option value="color2">カラー2</option>
-  <option value="color3">カラー3</option>
-</select>
+<div class="Option">
+    <label for="color-scheme-select">テーマ：</label>
+    <select id="color-scheme-select" onchange="changeColorScheme(this.value)">
+        <option value='{"bgColor":"#98fb98", "titleColor":"#000000", "textColor":"#000000", "boxColor":"#3fde3f", "homeColor":"#FFFDD0"}'>パステルグリーン</option>
+        <option value='{"bgColor":"#000080", "titleColor":"#ffffff", "textColor":"#ffffff", "boxColor":"#a8ffff", "homeColor":"#FFFFF0"}'>ミッドナイトブルー</option>
+        <option value='{"bgColor":"#eddfe0", "titleColor":"#696969", "textColor":"#696969", "boxColor":"#ffe3e5", "homeColor":"#f5f5f7"}'>パステルピンク</option>
+    </select>
+</div>
   </div>
     </div>
   

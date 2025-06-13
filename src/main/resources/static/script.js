@@ -59,3 +59,22 @@ function clickDoneList(e) {
   todoList.appendChild(newTask);
   node.remove();
 }
+
+function changeColorScheme(scheme) {
+    const colors = JSON.parse(scheme);
+    document.documentElement.style.setProperty('--main-bg-color', colors.bgColor);
+    document.documentElement.style.setProperty('--main-title-color', colors.titleColor);
+    document.documentElement.style.setProperty('--main-text-color', colors.textColor);
+    document.documentElement.style.setProperty('--main-box-color', colors.boxColor);
+    document.documentElement.style.setProperty('--main-home-color', colors.homeColor);
+
+    localStorage.setItem('colorScheme', scheme);
+}
+
+window.addEventListener('load', () => {
+    const savedScheme = localStorage.getItem('colorScheme');
+    if (savedScheme) {
+        changeColorScheme(savedScheme);
+        document.getElementById('color-scheme-select').value = savedScheme;
+    }
+});

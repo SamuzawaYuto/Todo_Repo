@@ -20,7 +20,8 @@ public class UserService {
     public void createUser(UserForm userForm){
         User user = new User();
         user.setUserId(userForm.getUserId());
-        user.setPassword(userForm.getPassword());
+        String hashedPassword = passwordEncoder.encode(userForm.getPassword());
+        user.setPassword(hashedPassword);
         user.setUserName("名無し");
         userRepository.insertUser(user);
     }

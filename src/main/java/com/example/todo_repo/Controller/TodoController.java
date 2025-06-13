@@ -63,8 +63,11 @@ public class TodoController {
 
     @GetMapping("/option")
 public String Option(Model model) {
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     TodoForm todoForm = new TodoForm();
+    String userId = auth.getName();
     model.addAttribute("todoForm", todoForm);
+    model.addAttribute("userId", userId);
     return "todo/option";
 }
 

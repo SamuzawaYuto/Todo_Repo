@@ -11,7 +11,7 @@ import com.example.todo_repo.entity.User;
 import com.example.todo_repo.form.UserForm;
 import com.example.todo_repo.service.UserService;
 
-@Controller("/login")
+@Controller
 public class RegistrationController {
     private final UserService userService;
 
