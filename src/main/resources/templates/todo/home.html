@@ -15,33 +15,20 @@
 
     <li><a href="#"class="white" id = "homeMenu">HOME</a></li>
     <li><a href="home/new" id = "homeMenu">登録</a></li>
-    <li><a href="#" id = "homeMenu">削除</a></li>
-    <li><a href="#" id = "homeMenu">設定</a></li>
+    <li><a href="home/delete" id = "homeMenu">削除</a></li>
+    <li><a href="home/option" id = "homeMenu">設定</a></li>
   </ul>
 </nav>
   
     <p  class= "head_message">ホーム</p>
-  
-  
-  
-
-    <!--<div> id ="todoListWrapper"-->
-        <!--<h1 class="ListStyle">ToDo List</h1>-->
-        <!--<ul id="todoList">-->
-            <!-- <input type="button" id="deleteButton" value="削除" onclick="Delete()"/> -->
-                    <!--<li>
-            <input type="checkbox" id="studyCheckbox">
-            <a href="#" id = "Listanker">study</a>
-          </li>-->
-          <!--<li><input type ="checkbox" onclick="clickTodoList(event)" />study</li>-->
-        <!--</ul>
-    </div>-->
 
 <div> 
     <h1 class="ListStyle">ToDo List</h1>
-    <ul id="todoList">
-        <li th:each="todo : ${todos}">
-            <a th:href="@{/home/{todoId}(todoId=${todo.todoId})}"><span th:text="${todo.title}">todo title</span></a>
+    <ul>
+        <li id="todoList" class = "ListSpace" th:each="todo : ${todos}">
+          
+            <a  th:href="@{/home/{todoId}(todoId=${todo.todoId})}"><span th:text="${todo.title}">todo title</span><br></a>
+            
         </li>
     </ul>
 </div>
