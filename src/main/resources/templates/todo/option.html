@@ -10,26 +10,26 @@
 
 <body>
   
-  <nav>
+   <nav>
   <ul id = "homebar">
 
     <li><a href="../home" id = "homeMenu">HOME</a></li>
-    <li><a href="../home/new" id = "homeMenu">登録</a></li>
-    <li><a href="../home/delete" id = "homeMenu">削除</a></li>
-    <li><a href="../home/option" id = "homeMenu"class="white">設定</a></li>
+    <li><a href="../home/new" id = "taskRegistrationMenu">登録</a></li>
+    <li><a href="../home/delete" id = "taskDeleteMenu">削除</a></li>
+    <li><a href="../home/option" id = "optionMenu"class="white">設定</a></li>
   </ul>
 </nav>
   
-    <p  class= "head_message">設定</p>
+    <p  class= "head_message">todoList</p>
   
   <div id = "option_position">
   <div class = "Option">
-    ユーザーID： 設定したユーザーIDを表示
+    <p>ユーザーID： <span th:text="${userId}">Default ID</span></p>
   </div>
   
   <div class = "Option">
-    <label for = "user_name">ユーザー名：</label>
-    <input type = "text", id = "user_name" name = "user_name" value="名無し(全角10字以下)" />
+    <label for = "userName">ユーザー名：</label>
+    <input type = "text", id = "userName" name = "userName" value="名無し(全角10字以下)" />
   </div>
   
   <div class = "Option">
@@ -38,15 +38,15 @@
 		</label>
    </div>
   
-  <div class = "Option">
     
-<label for="select-box">カラー：</label>
-    
-<select id="select-box" name="animal">
-  <option value="pastel">パステルカラー</option>
-  <option value="color2">カラー2</option>
-  <option value="color3">カラー3</option>
-</select>
+<div class="Option">
+    <label for="color-scheme-select">テーマ：</label>
+    <select id="color-scheme-select" onchange="changeColorScheme(this.value)">
+        <option value='{"bgColor":"#98fb98", "titleColor":"#000000", "textColor":"#000000", "boxColor":"#3fde3f", "homeColor":"#FFFDD0"}'>パステルグリーン</option>
+        <option value='{"bgColor":"#000080", "titleColor":"#ffffff", "textColor":"#ffffff", "boxColor":"#a8ffff", "homeColor":"#FFFFF0"}'>ミッドナイトブルー</option>
+        <option value='{"bgColor":"#eddfe0", "titleColor":"#696969", "textColor":"#696969", "boxColor":"#ffe3e5", "homeColor":"#f5f5f7"}'>パステルピンク</option>
+    </select>
+</div>
   </div>
     </div>
   

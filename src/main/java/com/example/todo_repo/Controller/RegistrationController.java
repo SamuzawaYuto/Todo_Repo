@@ -29,7 +29,7 @@ public class RegistrationController {
     @PostMapping("/user")
     public String registerUser(@ModelAttribute UserForm userForm){
         userService.createUser(userForm);
-        return "redirect:/user";
+        return "redirect:/login";
     }
 
 }

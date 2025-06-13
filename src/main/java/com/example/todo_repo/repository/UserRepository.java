@@ -15,5 +15,6 @@ public class UserRepository {
     }
     public void insertUser(User user){
         userMapper.insertUser(user);
+        System.out.println("test");
     }
 } 

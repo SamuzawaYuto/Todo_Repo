@@ -12,14 +12,14 @@
 
 <body>
   <div></div>
-  <h3 class="head_message">ログイン</h3>
+  <h3 class="head_message">todoList</h3>
   <div th:if="${param.error}" style="color:red">
     ユーザ名、またはパスワードが違います
   </div>
   <form th:action="@{/login}" method="post">
     <div class="loginform">
-      <label for="user_Id"> ユーザーID：</label>
-      <input type="text" id="user_Id" name="username" size="50" /><br><br>
+      <label for="userId"> ユーザーID：</label>
+      <input type="text" id="userId" name="username" size="50" /><br><br>
 
       <label for="password">パスワード：</label>
       <input type="password" id="password" name="password" size="50" />
