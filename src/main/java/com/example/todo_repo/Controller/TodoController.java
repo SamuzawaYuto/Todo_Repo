@@ -47,30 +47,27 @@ public class TodoController {
         model.addAttribute("todo", todo);
         return "todo/taskDetail";
    }
-/*
-   @GetMapping("/delete")
-    public String todoForm(Model model) {
-        TodoForm todoForm = new TodoForm();
-        model.addAttribute("todoForm", todoForm);
+   
+    @GetMapping("/delete")
+    public String Delete(Model model){
+        List<Todo> todos = todoService.getAllTodos();
+        model.addAttribute("todos", todos);
         return "todo/taskDelete";
     }
-*/
+
     @PostMapping("/{todoId}/delete")
     public String deleteTodo(@PathVariable long todoId) {
         todoService.deleteTodo(todoId);
         return "redirect:/home";
     }
-/*
-    public String createTaskForm(@PathVariable long taskId, TaskForm taskForm) {
-        
-    }
 
-    public String createTask(@PathVariable long taskId, TaskForm taskForm) {
-    
-    }
+    @GetMapping("/option")
+public String Option(Model model) {
+    TodoForm todoForm = new TodoForm();
+    model.addAttribute("todoForm", todoForm);
+    return "todo/option";
+}
 
-    public String deleteTask(@PathVariable long taskId) {
+
     
-    }
-*/
  }

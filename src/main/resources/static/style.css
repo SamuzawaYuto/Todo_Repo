@@ -12,7 +12,6 @@ nav {
 
 li {
   list-style: none;
-  display: inline;
 }
 
 #homeMenu {
@@ -85,12 +84,14 @@ textarea{
 #todoList{
 
   background-color: #98fb98;
-  margin-left: 100px;
+  margin-left: 60px;
   font-size: 20px;
   
    list-style: none;
-    margin-bottom: 5px;
-  margin-right: 300px;
+   margin-bottom: 5px;
+   margin-right: 115px;
+  padding-left: 30px;
+  
 }
 
 #todoList li {
@@ -150,6 +151,21 @@ textarea{
 .loginbutton:hover {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
+.registrationButton{
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid #3fde3f;
+  background-color: #98fb98;
+  margin-top: 20px;
+  font-size: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.registrationButton:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
 #register_registerButtonPosition{
 
 position: absolute;
@@ -186,6 +202,23 @@ input{
   border-radius: 45px;
 }
 
+#User_return{
+  position: absolute;
+  left: 68%;
+  top: 80%;
+}
+
+.userReturn{
+    box-sizing: border-box;
+    width: 100px;
+    padding: 2px;
+    border: 5px solid #3fde3f;
+    background-color: #98fb98;
+    margin-top: 10px;
+    font-size: 20px;
+  border-radius: 45px;
+}
+
 .Option{
   color: #696969;
   background-color: #98fb98;
@@ -203,4 +236,8 @@ input{
 
 select{
   font-size: 20px;
+}
+
+.ListSpace{
+  background-color: cadetblue;
 }
