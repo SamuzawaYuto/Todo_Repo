@@ -14,9 +14,9 @@
   <ul id = "homebar">
 
     <li><a href="../home" id = "homeMenu">HOME</a></li>
-    <li><a href="home/new" id = "homeMenu" class="white">登録</a></li>
-    <li><a href="#" id = "homeMenu" >削除</a></li>
-    <li><a href="#" id = "homeMenu" >設定</a></li>
+    <li><a href="../home/new" id = "homeMenu" class="white">登録</a></li>
+    <li><a href="../home/delete" id = "homeMenu" >削除</a></li>
+    <li><a href="../home/option" id = "homeMenu" >設定</a></li>
   </ul>
 </nav>
   
@@ -42,9 +42,14 @@
 
       <label for="memo">　　メモ : </label>
       <textarea id="memo" name="memo" rows="5" th:field="*{memo}" cols="40"></textarea><br><br>
+      </div>
+
+      <div id = "register_registerButtonPosition">
 
       <button type="submit" class="register">登録</button>
-    </div>
+
+      </div>
+    
   </form>
   
   <div>
