@@ -1,8 +1,8 @@
 CREATE TABLE users (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    user_id VARCHAR(16) UNIQUE NOT NULL,
+    userId VARCHAR(16) UNIQUE NOT NULL,
     password VARCHAR(60) NOT NULL,
-    user_name VARCHAR(10)
+    userName VARCHAR(10)
 );
 
 CREATE TABLE todos (
