@@ -11,7 +11,7 @@ import com.example.todo_repo.entity.User;
 import com.example.todo_repo.form.UserForm;
 import com.example.todo_repo.service.UserService;
 
-@Controller
+@Controller("/login")
 public class RegistrationController {
     private final UserService userService;
 
@@ -29,7 +29,7 @@ public class RegistrationController {
     @PostMapping("/user")
     public String registerUser(@ModelAttribute UserForm userForm){
         userService.createUser(userForm);
-        return "redirect:/user";
+        return "redirect:/login";
     }
 
 }

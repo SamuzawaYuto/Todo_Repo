@@ -21,6 +21,7 @@ public class UserService {
         User user = new User();
         user.setUserId(userForm.getUserId());
         user.setPassword(userForm.getPassword());
+        user.setUserName("名無し");
         userRepository.insertUser(user);
     }
 }

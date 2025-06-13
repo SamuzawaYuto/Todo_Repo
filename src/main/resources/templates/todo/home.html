@@ -13,22 +13,23 @@
   <nav>
   <ul id = "homebar">
 
-    <li><a href="#"class="white" id = "homeMenu">HOME</a></li>
-    <li><a href="home/new" id = "homeMenu">登録</a></li>
-    <li><a href="home/delete" id = "homeMenu">削除</a></li>
-    <li><a href="home/option" id = "homeMenu">設定</a></li>
+    <li><a href="../home" id = "homeMenu" class="white">HOME</a></li>
+    <li><a href="home/new" id = "taskRegistrationMenu">登録</a></li>
+    <li><a href="home/delete" id = "taskDeleteMenu">削除</a></li>
+    <li><a href="home/option" id = "optionMenu">設定</a></li>
   </ul>
 </nav>
   
-    <p  class= "head_message">ホーム</p>
+    <p  class= "head_message">todoList</p>
 
 <div> 
     <h1 class="ListStyle">ToDo List</h1>
-    <ul>
-        <li id="todoList" class = "ListSpace" th:each="todo : ${todos}">
+    <ul id="todoList">
+        <li th:each="todo : ${todos}">
           
-            <a  th:href="@{/home/{todoId}(todoId=${todo.todoId})}"><span th:text="${todo.title}">todo title</span><br></a>
-            
+            <!--<input type="checkbox" class = "checkBox" th:href="@{/home/{todoId}(todoId=${todo.todoId})}" onclick="clickTodoList(event)"><a><span th:text="${todo.title}">todo title</span><br></a>-->
+            <input type="checkbox" class = "checkBox" onclick="clickTodoList(event)"> 
+            <a th:href="@{/home/{todoId}(todoId=${todo.todoId})}"><span th:text="${todo.title}">todo title</span><br></a>
         </li>
     </ul>
 </div>
