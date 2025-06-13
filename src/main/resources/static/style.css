@@ -1,23 +1,24 @@
 body {
-    background-color: #ffffcc;
+    background-color: var(--main-home-color);
 }
 
 nav {
   width: 100%;
   height: 70px;
-  background-color: #98fb98;
+  background-color: var(--main-bg-color);
   padding-top: 5px;
   box-sizing: border-box;
 }
 
 li {
   list-style: none;
+  display: inline;
 }
 
 #homeMenu {
 display: block;
     text-decoration: none;
-    color: #696969;
+    color: var(--main-text-color);;
     margin-right: 50px;
     margin-top: -11px;
     font-size: 30px;
@@ -40,12 +41,12 @@ display: block;
   top: 0;
   transform: translate(10%, -70%);
   font-size: 55px;
-  color: #696969;
+  color: var(--main-text-color);;
 }
 
 footer {
-  background-color: #98fb98;
-  color: #696969;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);;
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -75,15 +76,20 @@ textarea{
     margin-inline-start: 100px;
     font-weight: bold;
     /*以下箱*/
-    border: solid 8px #3fde3f;
-    background-color: #98fb98;
+    border: solid 8px var(--main-box-color);
+    background-color: var(--main-bg-color);
     line-height: 100px;
     width: 10%;
+    color: var(--main-title-color);
+}
+
+.linkcolor{
+  color: var(--main-title-color);
 }
 
 #todoList{
 
-  background-color: #98fb98;
+  background-color: var(--main-bg-color);
   margin-left: 100px;
   font-size: 20px;
   
@@ -96,7 +102,7 @@ textarea{
 
 #doneList{
 
-  background-color: #98fb98;
+  background-color: var(--main-bg-color);
   margin-left: 100px;
   font-size: 20px;
   
@@ -122,13 +128,13 @@ textarea{
     box-sizing: border-box;
     width: 200px;
     padding: 20px;
-    border: 5px solid #3fde3f;
-    background-color: #98fb98;
+    border: 5px solid var(--main-box-color);
+    background-color: var(--main-bg-color);
     margin-top: 10px;
     font-size: 30px;
 }
 .return:hover {
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 10px var(--main-title-color);
 }
 
 
@@ -136,44 +142,29 @@ textarea{
   box-sizing: border-box;
   width: 200px;
   padding: 20px;
-  border: 5px solid #3fde3f;
-  background-color: #98fb98;
+  border: 5px solid var(--main-box-color);
+  background-color: var(--main-bg-color);
   margin-top: 20px;
   font-size: 30px;
   border-radius: 45px;
 }
 .register:hover {
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 10px var(--main-title-color);
 }
 .loginbutton{
   box-sizing: border-box;
   width: 200px;
   padding: 20px;
-  border: 5px solid #3fde3f;
-  background-color: #98fb98;
+  border: 5px solid var(--main-box-color);
+  background-color: var(--main-bg-color);
   margin-top: 20px;
   font-size: 30px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px var(--main-title-color);
   cursor: pointer;
   transition: box-shadow 0.3s ease;
 }
 .loginbutton:hover {
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-}
-.registrationButton{
-  box-sizing: border-box;
-  width: 200px;
-  padding: 20px;
-  border: 5px solid #3fde3f;
-  background-color: #98fb98;
-  margin-top: 20px;
-  font-size: 30px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
-}
-.registrationButton:hover {
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 10px var(--main-title-color);
 }
 #register_registerButtonPosition{
 
@@ -187,7 +178,9 @@ position: absolute;
   left: 80%;
   top: 75%;
 }
-
+.white{
+  color:#767676;
+}
 input{
    font-size: 120%;
 }
@@ -202,33 +195,16 @@ input{
     box-sizing: border-box;
     width: 100px;
     padding: 2px;
-    border: 5px solid #3fde3f;
-    background-color: #98fb98;
-    margin-top: 10px;
-    font-size: 20px;
-  border-radius: 45px;
-}
-
-#User_return{
-  position: absolute;
-  left: 68%;
-  top: 80%;
-}
-
-.userReturn{
-    box-sizing: border-box;
-    width: 100px;
-    padding: 2px;
-    border: 5px solid #3fde3f;
-    background-color: #98fb98;
+    border: 5px solid var(--main-box-color);
+    background-color: var(--main-bg-color);
     margin-top: 10px;
     font-size: 20px;
   border-radius: 45px;
 }
 
 .Option{
-  color: #696969;
-  background-color: #98fb98;
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
   padding-top: 5px;
   padding-bottom: 5px;
   margin-top: 5px;
@@ -245,32 +221,12 @@ select{
   font-size: 20px;
 }
 
-#homeMenu {
-    margin-right: 50px;
-    margin-top: -11px;
-    font-size: 30px;
-}
-
-#taskRegistrationMenu{
-    margin-right: 50px;
-    margin-top: -11px;
-    font-size: 30px;
-}
-
-#taskDeleteMenu {
-    margin-right: 50px;
-    margin-top: -11px;
-    font-size: 30px;
-}
-
-#optionMenu {
-    margin-right: 50px;
-    margin-top: -11px;
-    font-size: 30px;
-}
-
-.white{
-  color:#767676;
+:root {
+    --main-home-color: #ffffcc;/*ホーム背景色*/
+    --main-title-color: #696969;/*タイトル色*/
+    --main-text-color: #696969;/*テキスト色*/
+    --main-bg-color: #98fb98; /* 背景色の変数 */
+    --main-box: #3fde3f; /* テキスト色の変数 */
 }
 
 .checkBox{
