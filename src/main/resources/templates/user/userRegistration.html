@@ -15,13 +15,24 @@
 <h3 class="head_message">新規登録</h3>
 
 <body>
-  <form th:action="@{/user}" th:object="${userForm}" method="post">
-    <div class = "loginform">
-      <label for="userId">ユーザーID: </label>
-      <input type="text" id="userId" name="userId" th:field="*{userId}" size="50" /><br><br>
-
-      <label for="password">パスワード: </label>
-      <input type="text" id="password" name="password" th:field="*{password}" size="50" /><br><br>
+  <form th:action="@{/user}" th:object="${userForm}" method="post" id="form">
+    <div class="loginform">
+      <p>
+        <label>
+          <span>ユーザーID : </span>
+        <input type="text" id="input" name="userId" th:field="*{userId}" size="16" minlength="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}"
+          title="大文字,小文字,数字を含めた、英数字8文字以上16文字以下で入力してください。" required /><br><br>
+        </label>
+          <span class="errorMessage"></span>
+      </p>
+      <p>
+        <label>
+          <span>パスワード : </span> 
+        <input type="text" id="input" name="password" th:field="*{password}" size="32" minlength="8" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}"
+          title="大文字,小文字,数字を含めた、英数字8文字以上32文字以下で入力してください。"  required /><br><br>
+        </label>
+          <span class="errorMessage"></span>
+      </p>
     </div>
 
     <div id="register_registerButtonPosition">

@@ -10,34 +10,6 @@ nav {
   box-sizing: border-box;
 }
 
-#taskRegistrationMenu{/*ナビメニュー(登録)*/
-display: block;
-    text-decoration: none;
-    color: var(--main-text-color);
-    margin-right: 50px;
-    margin-top: -11px;
-    font-size: 30px;
-} 
-#taskDeleteMenu{/*ナビメニュー(削除)*/
-display: block;
-    text-decoration: none;
-    color: var(--main-text-color);
-    margin-right: 50px;
-    margin-top: -11px;
-    font-size: 30px;
-} 
-
-#optionMenu{/*ナビメニュー(設定)*/
-display: block;
-    text-decoration: none;
-    color: var(--main-text-color);
-    margin-right: 50px;
-    margin-top: -11px;
-    font-size: 30px;
-}
-
-
-
 #Listanker{
   color: blue;
 }
@@ -254,6 +226,12 @@ select{
   font-size: 20px;
 }
 
+.fixed-size {
+  width: 650px;   /* テキストエリアの幅を固定 */
+  height: 125px;  /* テキストエリアの高さを固定 */
+  resize: none;   /* サイズ変更を禁止 */
+}
+
 :root {
     --main-home-color: #ffffcc;/*ホーム背景色*/
     --main-title-color: #696969;/*タイトル色*/
@@ -261,7 +239,7 @@ select{
     --main-bg-color: #98fb98; /* 背景色の変数 */
     --main-box-color: #3fde3f; /* テキスト色の変数 */
     --main-white-color: #767676;/*現在いるリンク色*/
-    --main-white-color: #000000;
+    --main-label-color: #000000;
 }
 
 #homeMenu {
