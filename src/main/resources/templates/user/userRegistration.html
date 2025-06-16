@@ -12,19 +12,16 @@
 <nav>
 
 </nav>
-
-<div id="loginscreen">
-  <p id="head_message">新規登録</p>
-</div>
+<h3 class="head_message">新規登録</h3>
 
 <body>
   <form th:action="@{/user}" th:object="${userForm}" method="post">
-    <div id="form">
+    <div class = "loginform">
       <label for="userId">ユーザーID: </label>
-      <input type="text" id="userId" name="userId" th:field="*{userId}" size="16" />
+      <input type="text" id="userId" name="userId" th:field="*{userId}" size="50" /><br><br>
 
       <label for="password">パスワード: </label>
-      <input type="text" id="password" name="password" th:field="*{password}" size="50" />
+      <input type="text" id="password" name="password" th:field="*{password}" size="50" /><br><br>
     </div>
 
     <div id="register_registerButtonPosition">
@@ -32,8 +29,8 @@
     </div>
   </form>
   <form th:action="@{/login}" method="get">
-    <div id="User_return">
-      <button class="userReturn" type="submit">戻る</button>
+    <div>
+      <button class="return" type="submit">戻る</button>
     </div>
   </form>
 </body>

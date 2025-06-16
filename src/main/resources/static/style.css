@@ -10,19 +10,33 @@ nav {
   box-sizing: border-box;
 }
 
-li {
-  list-style: none;
-  display: inline;
-}
-
-#homeMenu {
+#taskRegistrationMenu{/*ナビメニュー(登録)*/
 display: block;
     text-decoration: none;
-    color: var(--main-text-color);;
+    color: var(--main-text-color);
+    margin-right: 50px;
+    margin-top: -11px;
+    font-size: 30px;
+} 
+#taskDeleteMenu{/*ナビメニュー(削除)*/
+display: block;
+    text-decoration: none;
+    color: var(--main-text-color);
+    margin-right: 50px;
+    margin-top: -11px;
+    font-size: 30px;
+} 
+
+#optionMenu{/*ナビメニュー(設定)*/
+display: block;
+    text-decoration: none;
+    color: var(--main-text-color);
     margin-right: 50px;
     margin-top: -11px;
     font-size: 30px;
 }
+
+
 
 #Listanker{
   color: blue;
@@ -81,6 +95,10 @@ textarea{
     line-height: 100px;
     width: 10%;
     color: var(--main-title-color);
+}
+
+.label{
+  color: var(--main-label-color);
 }
 
 .linkcolor{
@@ -162,12 +180,12 @@ textarea{
   box-shadow: 2px 2px 5px var(--main-title-color);
   cursor: pointer;
   transition: box-shadow 0.3s ease;
+  border-radius: 45px;
 }
 .loginbutton:hover {
   box-shadow: 4px 4px 10px var(--main-title-color);
 }
 #register_registerButtonPosition{
-
 position: absolute;
   left: 43%;
   top: 73%;
@@ -179,7 +197,7 @@ position: absolute;
   top: 75%;
 }
 .white{
-  color:#767676;
+  color:var(--main-white-color);
 }
 input{
    font-size: 120%;
@@ -226,7 +244,33 @@ select{
     --main-title-color: #696969;/*タイトル色*/
     --main-text-color: #696969;/*テキスト色*/
     --main-bg-color: #98fb98; /* 背景色の変数 */
-    --main-box: #3fde3f; /* テキスト色の変数 */
+    --main-box-color: #3fde3f; /* テキスト色の変数 */
+    --main-white-color: #767676;/*現在いるリンク色*/
+    --main-white-color: #000000;
+}
+
+#homeMenu {
+    margin-right: 50px;
+    margin-top: -11px;
+    font-size: 30px;
+}
+
+#taskRegistrationMenu{
+    margin-right: 50px;
+    margin-top: -11px;
+    font-size: 30px;
+}
+
+#taskDeleteMenu {
+    margin-right: 50px;
+    margin-top: -11px;
+    font-size: 30px;
+}
+
+#optionMenu {
+    margin-right: 50px;
+    margin-top: -11px;
+    font-size: 30px;
 }
 
 .checkBox{
