@@ -13,9 +13,9 @@
 <nav>
   <ul id = "homebar">
 
-    <li><a href="../home" id = "homeMenu">HOME</a></li>
-    <li><a href="../home/new" id = "taskRegistrationMenu">登録</a></li>
-    <li><a href="../home/delete" id = "taskDeleteMenu">削除</a></li>
+    <li><a href="../home" id = "homeMenu" class="linkcolor">HOME</a></li>
+    <li><a href="../home/new" id = "taskRegistrationMenu" class="linkcolor">登録</a></li>
+    <li><a href="../home/delete" id = "taskDeleteMenu" class="linkcolor">削除</a></li>
     <li><a href="../home/option"class="white" id = "optionMenu">設定</a></li>
   </ul>
 </nav>
@@ -25,21 +25,21 @@
   
      <div id = "registrationForm">
   
-    <label for = "title" >タイトル : </label>
+    <label class="label" for = "title" >タイトル : </label>
     <input type ="text" id ="title" name="title" size = "50" th:value="${todo.title}" required/><br><br>
     
-    <label for = "date" >　　日時 :</label>
+    <label class="label" for = "date" >　　日時 :</label>
     <input type ="date" id ="date" name="date" th:value="${todo.date}"/>
     <input type ="time" id ="time" name="time" th:value="${todo.time}"/><br><br>
     
 
-    <label for = "area">　　場所 : </label>
+    <label class="label" for = "area">　　場所 : </label>
     <input type ="text" id = "area" name = "area" size = "50" th:value="${todo.area}"/><br><br>
     
-    <label for = "url">　　URL : </label>
+    <label class="label" for = "url">　　URL : </label>
     <input type ="url" id = "url" name = "url" size = "50" th:value="${todo.url}"/><br><br>
     
-    <label for = "memo">　　メモ : </label>
+    <label class="label" for = "memo">　　メモ : </label>
     <textarea id = "memo" name="memo" rows="5" cols="40" th:text="${todo.memo}"></textarea><br><br>
    </div>
   
