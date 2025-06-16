@@ -41,8 +41,6 @@ function clickTodoList(e) {
   const linkElement = node.querySelector('a');
   newTask.appendChild(linkElement);
 
-  
-
   doneList.appendChild(newTask);
   node.remove();
 }
@@ -67,6 +65,8 @@ function changeColorScheme(scheme) {
     document.documentElement.style.setProperty('--main-text-color', colors.textColor);
     document.documentElement.style.setProperty('--main-box-color', colors.boxColor);
     document.documentElement.style.setProperty('--main-home-color', colors.homeColor);
+    document.documentElement.style.setProperty('--main-white-color', colors.whiteColor);
+    document.documentElement.style.setProperty('--main-label-color', colors.labelColor);
 
     localStorage.setItem('colorScheme', scheme);
 }

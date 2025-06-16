@@ -13,10 +13,10 @@
  <nav>
     <ul id="homebar">
 
-      <li><a href="../home" id="homeMenu">HOME</a></li>
-      <li><a href="../home/new" id="taskRegistrationMenu">登録</a></li>
+      <li><a href="../home" id="homeMenu" class="linkcolor">HOME</a></li>
+      <li><a href="../home/new" id="taskRegistrationMenu" class="linkcolor">登録</a></li>
       <li><a href="../home/delete" id="taskDeleteMenu" class="white">削除</a></li>
-      <li><a href="../home/option" id="optionMenu">設定</a></li>
+      <li><a href="../home/option" id="optionMenu" class="linkcolor">設定</a></li>
     </ul>
   </nav>
 
@@ -27,7 +27,7 @@
       <!-- <input type="button" id="deleteButton" value="削除" onclick="Delete()"/> -->
       <li th:each="todo : ${todos}" th:attr="data-id=${todo.todoId}">
         <a th:href="@{/home/{todoId}(todoId=${todo.todoId})}">
-          <span th:text="${todo.title}">todo title</span>
+          <span class="linkcolor" th:text="${todo.title}">todo title</span>
         </a>
         <form th:action="@{/home/{todoId}/delete(todoId=${todo.todoId})}" method="post">
           <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
