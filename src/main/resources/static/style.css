@@ -68,6 +68,18 @@ footer {
   right: 0;
 }
 
+
+.registrationButton{
+      border-radius: 45px;
+    box-sizing: border-box;
+    width: 200px;
+    padding: 20px;
+    border: 5px solid var(--main-box-color);
+    background-color: var(--main-bg-color);
+    margin-top: 10px;
+    font-size: 30px;
+}
+
 .loginform{
   position: absolute;
   top: 40%;
@@ -148,6 +160,7 @@ textarea{
     padding: 20px;
     border: 5px solid var(--main-box-color);
     background-color: var(--main-bg-color);
+    color: var(--main-text-color);
     margin-top: 10px;
     font-size: 30px;
 }
@@ -162,6 +175,7 @@ textarea{
   padding: 20px;
   border: 5px solid var(--main-box-color);
   background-color: var(--main-bg-color);
+  color: var(--main-text-color);
   margin-top: 20px;
   font-size: 30px;
   border-radius: 45px;
@@ -215,6 +229,7 @@ input{
     padding: 2px;
     border: 5px solid var(--main-box-color);
     background-color: var(--main-bg-color);
+    color: var(--main-text-color);
     margin-top: 10px;
     font-size: 20px;
   border-radius: 45px;
