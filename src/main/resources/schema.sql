@@ -12,5 +12,7 @@ CREATE TABLE IF NOT EXISTS todos (
     time TIME,
     area VARCHAR(255),
     url VARCHAR(2083),
-    memo VARCHAR(255)
+    memo VARCHAR(255),
+    userId VARCHAR(16) NOT NULL,
+    FOREIGN KEY (userId) REFERENCES users(userId) 
 );

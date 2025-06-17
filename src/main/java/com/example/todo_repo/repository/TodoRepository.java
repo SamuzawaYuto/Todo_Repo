@@ -1,7 +1,9 @@
 package com.example.todo_repo.repository;
  import com.example.todo_repo.mapper.TodoMapper;
  import com.example.todo_repo.entity.Todo;
- import org.springframework.stereotype.Repository;
+import com.example.todo_repo.entity.User;
+
+import org.springframework.stereotype.Repository;
  import java.util.List;
  @Repository
  public class TodoRepository {
@@ -15,7 +17,10 @@ package com.example.todo_repo.repository;
    public void insertTodo(Todo todo) {
        todoMapper.insertTodo(todo);
    }
-   
+
+//    public String getId(String userId1){
+//        return todoMapper.getId(userId1);
+//    }   
    
    public Todo getTodoId(long todoId) {
        return todoMapper.selectTodoById(todoId);

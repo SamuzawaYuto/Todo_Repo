@@ -2,9 +2,12 @@ package com.example.todo_repo.controller;
 
 import com.example.todo_repo.entity.Todo;
 import com.example.todo_repo.form.TodoForm;
+import com.example.todo_repo.form.UserForm;
+import com.example.todo_repo.security.CustomUserDetails;
 import com.example.todo_repo.service.TodoService;
 
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,8 +41,8 @@ public class TodoController {
     }
 
    @PostMapping("/new")
-   public String createTodo(TodoForm todoForm) {
-       todoService.createTodo(todoForm);
+   public String createTodo(TodoForm todoForm, @AuthenticationPrincipal CustomUserDetails userDetails) {
+       todoService.createTodo(todoForm, userDetails.getUsername());
        return "redirect:/home";
    }
 

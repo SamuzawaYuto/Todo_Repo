@@ -78,3 +78,4 @@ window.addEventListener('load', () => {
         document.getElementById('color-scheme-select').value = savedScheme;
     }
 });
+
