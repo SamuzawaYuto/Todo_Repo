@@ -303,7 +303,7 @@ select{
   border: 5px solid var(--main-box-color);
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
-  margin-top: 20px;
+  margin-top: 80px;
   font-size: 30px;
   border-radius: 45px;
   box-shadow: 3px 2px 5px var(--main-title-color);

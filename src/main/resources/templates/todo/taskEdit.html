@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>taskDetail</title>
@@ -9,49 +10,52 @@
 </head>
 
 <body>
-  
-<nav>
-  <ul id = "homebar">
 
-    <li><a href="../home" id = "homeMenu" class="linkcolor">HOME</a></li>
-    <li><a href="../home/new" id = "taskRegistrationMenu" class="linkcolor">登録</a></li>
-    <li><a href="../home/delete" id = "taskDeleteMenu" class="linkcolor">削除</a></li>
-    <li><a href="../home/option"class="white" id = "optionMenu">設定</a></li>
-  </ul>
-</nav>
-  
-    <p  class= "head_message">todoList</p><!--p要素に変更-->
-  
-    <form th:action="@{/home/{todoId}/edit(todoId=${todo.todoId})}" th:object="${todo}" method="post">
-    <div id = "registrationForm">
-  
-    <label class="label" for = "title" >タイトル : </label>
-    <input type ="text" id ="title" name="title" size = "50" th:field="*{title}" required/><br><br>
-    
-    <label class="label" for = "date" >　　日時 :</label>
-    <input type ="date" id ="date" name="date" th:field="*{date}"/>
-    <input type ="time" id ="time" name="time" th:field="*{time}"/><br><br>
-    
+  <nav>
+    <ul id="homebar">
 
-    <label class="label" for = "area">　　場所 : </label>
-    <input type ="text" id = "area" name = "area" size = "50" th:field="*{area}"/><br><br>
-    
-    <label class="label" for = "url">　　URL : </label>
-    <input type ="url" id = "url" name = "url" size = "50" th:field="*{url}"/><br><br>
-    
-    <label class="label" for = "memo">　　メモ : </label>
-    <textarea id = "memo" name="memo" rows="5" cols="40" th:field="*{memo}" class="fixed-size"></textarea><br><br>
-   </div>
-   <button type="submit">変更</button>
-    </form>
-    <div id = Detail_return>
-  <button class = "return_detail" onclick="location.href='http://localhost:8080/home'">戻る</button>
+      <li><a href="../../home" id="homeMenu" class="linkcolor">HOME</a></li>
+      <li><a href="../../home/new" id="taskRegistrationMenu" class="linkcolor">登録</a></li>
+      <li><a href="../../home/delete" id="taskDeleteMenu" class="linkcolor">削除</a></li>
+      <li><a href="../../home/option" class="white" id="optionMenu">設定</a></li>
+    </ul>
+  </nav>
+
+  <p class="head_message">todoList</p><!--p要素に変更-->
+
+  <form th:action="@{/home/{todoId}/edit(todoId=${todo.todoId})}" th:object="${todo}" method="post">
+    <div id="registrationForm">
+
+      <label class="label" for="title">タイトル : </label>
+      <input type="text" id="title" name="title" size="50" th:field="*{title}" required /><br><br>
+
+      <label class="label" for="date">　　日時 :</label>
+      <input type="date" id="date" name="date" th:field="*{date}" />
+      <input type="time" id="time" name="time" th:field="*{time}" /><br><br>
+
+
+      <label class="label" for="area">　　場所 : </label>
+      <input type="text" id="area" name="area" size="50" th:field="*{area}" /><br><br>
+
+      <label class="label" for="url">　　URL : </label>
+      <input type="url" id="url" name="url" size="50" th:field="*{url}" /><br><br>
+
+      <label class="label" for="memo">　　メモ : </label>
+      <textarea id="memo" name="memo" rows="5" cols="40" th:field="*{memo}" class="fixed-size"></textarea><br><br>
+    </div>
+    <div id="edit_Position">
+      <button type="submit" class="edit">変更</button>
+    </div>
+  </form>
+  <div id=Detail_return>
+    <button class="return_detail" onclick="location.href='http://localhost:8080/home'">戻る</button>
   </div>
 
-<script src="/script.js" type="text/javascript"></script>
-  
+  <script src="/script.js" type="text/javascript"></script>
+
   <footer>
-   <p>@GAKU-todo</p>
-   </footer>
+    <p>@GAKU-todo</p>
+  </footer>
 </body>
+
 </html>

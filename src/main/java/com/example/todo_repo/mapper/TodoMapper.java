@@ -29,7 +29,7 @@ import java.util.List;
    @Delete("DELETE FROM todos WHERE todo_id = #{todoId}")
     void deleteTodoById(long todoId);
 
-    @Update("UPDATE todos SET title = #{title}, date = #{date}, time = #{time}, area = #{area}, url = {url}, memo = #{memo} WHERE todo_id = #{todoId}")
+    @Update("UPDATE todos SET title = #{title}, date = #{date}, time = #{time}, area = #{area}, url = #{url}, memo = #{memo} WHERE todo_id = #{todoId}")
     void updateTodo(Todo todo);
   
  }
