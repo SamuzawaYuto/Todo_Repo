@@ -2,9 +2,12 @@ package com.example.todo_repo.controller;
 
 import com.example.todo_repo.entity.Todo;
 import com.example.todo_repo.form.TodoForm;
+import com.example.todo_repo.form.UserForm;
+import com.example.todo_repo.security.CustomUserDetails;
 import com.example.todo_repo.service.TodoService;
 
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,8 +27,9 @@ public class TodoController {
     }
 
     @GetMapping
-    public String todos(Model model) {
-        List<Todo> todos = todoService.getAllTodos();
+    public String todos(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
+        String userId = userDetails.getUsername();
+        List<Todo> todos = todoService.getAllTodos(userId);
         model.addAttribute("todos", todos);
         return "todo/home";
     }
@@ -38,8 +42,8 @@ public class TodoController {
     }
 
    @PostMapping("/new")
-   public String createTodo(TodoForm todoForm) {
-       todoService.createTodo(todoForm);
+   public String createTodo(TodoForm todoForm, @AuthenticationPrincipal CustomUserDetails userDetails) {
+       todoService.createTodo(todoForm, userDetails.getUsername());
        return "redirect:/home";
    }
 
@@ -51,8 +55,9 @@ public class TodoController {
    }
    
     @GetMapping("/delete")
-    public String Delete(Model model){
-        List<Todo> todos = todoService.getAllTodos();
+    public String Delete(Model model, @AuthenticationPrincipal CustomUserDetails userDetails){
+        String userid = userDetails.getUsername();
+        List<Todo> todos = todoService.getAllTodos(userid);
         model.addAttribute("todos", todos);
         return "todo/taskDelete";
     }
@@ -73,6 +78,16 @@ public String Option(Model model) {
     return "todo/option";
 }
 
+@GetMapping("/{todoId}/edit")
+public String editTodo(@PathVariable long todoId, Model model) {
+    Todo todo = todoService.getTodoById(todoId);
+    model.addAttribute("todo", todo);
+    return "todo/taskEdit";
+}
 
-    
- }
+@PostMapping("/{todoId}/edit")
+public String updateTodo(@PathVariable long todoId, Todo todo) {
+    todoService.updateTodo(todoId, todo);
+    return "redirect:/home";
+}
+}

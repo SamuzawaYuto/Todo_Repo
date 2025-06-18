@@ -42,14 +42,18 @@ footer {
 
 
 .registrationButton{
-      border-radius: 45px;
+    border-radius: 45px;
     box-sizing: border-box;
     width: 200px;
     padding: 20px;
     border: 5px solid var(--main-box-color);
     background-color: var(--main-bg-color);
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 30px;
+}
+
+.registrationButton:hover{
+  box-shadow: 4px 4px 10px var(--main-text-color);
 }
 
 .loginform{
@@ -78,7 +82,7 @@ textarea{
     background-color: var(--main-bg-color);
     line-height: 100px;
     width: 10%;
-    color: var(--main-title-color);
+    color: var(--main-text-color);
 }
 
 .label{
@@ -86,7 +90,7 @@ textarea{
 }
 
 .linkcolor{
-  color: var(--main-title-color);
+  color: var(--main-text-color);
 }
 
 #todoList{
@@ -135,9 +139,10 @@ textarea{
     color: var(--main-text-color);
     margin-top: 10px;
     font-size: 30px;
+    box-shadow: 3px 2px 5px var(--main-title-color);
 }
 .return:hover {
-  box-shadow: 4px 4px 10px var(--main-title-color);
+  box-shadow: 4px 4px 10px var(--main-text-color);
 }
 
 
@@ -151,9 +156,10 @@ textarea{
   margin-top: 20px;
   font-size: 30px;
   border-radius: 45px;
+  box-shadow: 3px 2px 5px var(--main-title-color);
 }
 .register:hover {
-  box-shadow: 4px 4px 10px var(--main-title-color);
+  box-shadow: 4px 4px 10px var(--main-text-color);
 }
 .loginbutton{
   box-sizing: border-box;
@@ -163,13 +169,13 @@ textarea{
   background-color: var(--main-bg-color);
   margin-top: 20px;
   font-size: 30px;
-  box-shadow: 2px 2px 5px var(--main-title-color);
+  box-shadow: 2px 2px 5px var(--main-text-color);
   cursor: pointer;
   transition: box-shadow 0.3s ease;
   border-radius: 45px;
 }
 .loginbutton:hover {
-  box-shadow: 4px 4px 10px var(--main-title-color);
+  box-shadow: 4px 4px 10px var(--main-text-color);
 }
 #register_registerButtonPosition{
 position: absolute;
@@ -205,6 +211,11 @@ input{
     margin-top: 10px;
     font-size: 20px;
   border-radius: 45px;
+  box-shadow: 3px 2px 5px var(--main-title-color);
+}
+
+.return_detail:hover {
+  box-shadow: 4px 4px 10px var(--main-text-color);
 }
 
 .Option{
@@ -233,11 +244,10 @@ select{
 }
 
 :root {
-    --main-home-color: #ffffcc;/*ホーム背景色*/
-    --main-title-color: #696969;/*タイトル色*/
-    --main-text-color: #696969;/*テキスト色*/
-    --main-bg-color: #98fb98; /* 背景色の変数 */
-    --main-box-color: #3fde3f; /* テキスト色の変数 */
+    --main-home-color: #ffffff;/*ホーム背景色*/
+    --main-text-color: #000000;/*テキスト色*/
+    --main-bg-color: #f3f3f3; /* 背景色の変数 */
+    --main-box-color: #dedede; /* テキスト色の変数 */
     --main-white-color: #767676;/*現在いるリンク色*/
     --main-label-color: #000000;
 }
@@ -270,4 +280,40 @@ select{
   width:			20px;	
 	height:			20px;
   margin-left: -25px;
+}
+
+.error{
+  color:red;
+  position: absolute;
+  top: 30%;
+  left: 37%;
+  height: 430px;
+  font-size: 20px;
+  height: 100px;
+}
+
+.hidden{
+  display: none;
+}
+
+.edit{
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid var(--main-box-color);
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  margin-top: 20px;
+  font-size: 30px;
+  border-radius: 45px;
+  box-shadow: 3px 2px 5px var(--main-title-color);
+}
+.edit:hover {
+  box-shadow: 4px 4px 10px var(--main-text-color);
+}
+
+#edit_Position{
+  position: absolute;
+    left: 46%;
+    top: 56%;
 }

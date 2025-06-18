@@ -18,4 +18,5 @@ import java.time.LocalTime;
    private String area;
    private String url;
    private String memo;
+   private String userId; 
  }

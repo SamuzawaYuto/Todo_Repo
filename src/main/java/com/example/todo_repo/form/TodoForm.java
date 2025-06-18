@@ -11,4 +11,5 @@ public class TodoForm {
     private String area;
     private String url;
     private String memo;
+    private String userId;
 }

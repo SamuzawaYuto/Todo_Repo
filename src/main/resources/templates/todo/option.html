@@ -44,24 +44,42 @@
       <label for="color-scheme-select">テーマ：</label>
       <select id="color-scheme-select" onchange="changeColorScheme(this.value)">
         <option
-          value='{"bgColor":"#98fb98", "titleColor":"#000000", "textColor":"#000000", "boxColor":"#3fde3f", "homeColor":"#FFFDD0", "whiteColor":"#767676", "labelColor":"#000000"}'>
+          value='{"bgColor":"#f3f3f3", "textColor":"#000000", "boxColor":"#dedede", "homeColor":"#ffffff", "whiteColor":"#767676", "labelColor":"#000000"}'>
+          デフォルト</option>
+        <option
+          value='{"bgColor":"#98fb98", "textColor":"#000000", "boxColor":"#3fde3f", "homeColor":"#FFFDD0", "whiteColor":"#767676", "labelColor":"#000000"}'>
           パステルグリーン</option>
         <option
-          value='{"bgColor":"#000080", "titleColor":"#ffffff", "textColor":"#ffffff", "boxColor":"#7fbfff", "homeColor":"#FFFFF0", "whiteColor":"#767676", "labelColor":"#000000"}'>
+          value='{"bgColor":"#000080", "textColor":"#ffffff", "boxColor":"#7fbfff", "homeColor":"#FFFFF0", "whiteColor":"#767676", "labelColor":"#000000"}'>
           ミッドナイトブルー</option>
         <option
-          value='{"bgColor":"#eddfe0", "titleColor":"#696969", "textColor":"#696969", "boxColor":"#ffe3e5", "homeColor":"#f5f5f7", "whiteColor":"#c2c2c2", "labelColor":"#000000"}'>
+          value='{"bgColor":"#eddfe0", "textColor":"#696969", "boxColor":"#ffe3e5", "homeColor":"#f5f5f7", "whiteColor":"#c2c2c2", "labelColor":"#000000"}'>
           パステルピンク</option>
         <option
-          value='{"bgColor":"#99aaaa", "titleColor":"#000000", "textColor":"#000000", "boxColor":"#778888", "homeColor":"#000b1c", "whiteColor":"#636363", "labelColor":"#ffffff"}'>
+          value='{"bgColor":"#99aaaa", "textColor":"#000000", "boxColor":"#778888", "homeColor":"#000b1c", "whiteColor":"#636363", "labelColor":"#ffffff"}'>
           ダークモード</option>
         <option
-          value='{"bgColor":"#fdf6ee", "titleColor":"#612c16", "textColor":"#612c16", "boxColor":"#e05d4f", "homeColor":"#61728f", "whiteColor":"#c2c2c2", "labelColor":"#000000"}'>
+          value='{"bgColor":"#fdf6ee", "textColor":"#612c16", "boxColor":"#e05d4f", "homeColor":"#61728f", "whiteColor":"#c2c2c2", "labelColor":"#000000"}'>
           London afternoon</option>
         <option
-          value='{"bgColor":"#F8E4B0", "titleColor":"#3A3837", "textColor":"#3A3837", "boxColor":"#F7D47E", "homeColor":"#F7D580", "whiteColor":"#c2c2c2", "labelColor":"#000000"}'>
+          value='{"bgColor":"#F8E4B0", "textColor":"#3A3837", "boxColor":"#F7D47E", "homeColor":"#F7D580", "whiteColor":"#c2c2c2", "labelColor":"#000000"}'>
           コダック</option>
       </select>
+    </div>
+
+    <div class="Option">
+    <label for="custom-bgColor">リスト色:</label>
+    <input type="color" id="custom-bgColor" value="#f3f3f3" onchange="updateCustomColor()">
+    <label for="custom-textColor">　テキスト色:</label>
+    <input type="color" id="custom-textColor" value="#000000" onchange="updateCustomColor()">
+    <label for="custom-boxColor">　ボックス色:</label>
+    <input type="color" id="custom-boxColor" value="#ffffff" onchange="updateCustomColor()"><br>
+    <label for="custom-homeColor">背景色:</label>
+    <input type="color" id="custom-homeColor" value="#ffffff" onchange="updateCustomColor()">
+    <label for="custom-whiteColor">　現在のメニュー色:</label>
+    <input type="color" id="custom-whiteColor" value="#ffffff" onchange="updateCustomColor()">
+    <label for="custom-labelColor">　ラベルテキスト色:</label>
+    <input type="color" id="custom-labelColor" value="#000000" onchange="updateCustomColor()"><br>
     </div>
 
     <div class="Option">

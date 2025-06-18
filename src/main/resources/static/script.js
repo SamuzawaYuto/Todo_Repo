@@ -61,7 +61,6 @@ function clickDoneList(e) {
 function changeColorScheme(scheme) {
     const colors = JSON.parse(scheme);
     document.documentElement.style.setProperty('--main-bg-color', colors.bgColor);
-    document.documentElement.style.setProperty('--main-title-color', colors.titleColor);
     document.documentElement.style.setProperty('--main-text-color', colors.textColor);
     document.documentElement.style.setProperty('--main-box-color', colors.boxColor);
     document.documentElement.style.setProperty('--main-home-color', colors.homeColor);
@@ -78,3 +77,48 @@ window.addEventListener('load', () => {
         document.getElementById('color-scheme-select').value = savedScheme;
     }
 });
+
+function updateCustomColor() {
+    const customColors = {
+        bgColor: document.getElementById('custom-bgColor').value,
+        textColor: document.getElementById('custom-textColor').value,
+        boxColor: document.getElementById('custom-boxColor').value,
+        homeColor: document.getElementById('custom-homeColor').value,
+        whiteColor: document.getElementById('custom-whiteColor').value,
+        labelColor: document.getElementById('custom-labelColor').value,
+        // 他の色も同様に取得
+    };
+    changeColorScheme(JSON.stringify(customColors));
+}
+
+function savecheck() {
+  const checkboxes = document.querySelectorAll('.checkBox');
+  checkboxes.forEach((checkbox, index) => {
+    localStorage.setItem(`checkbox${index}`, checkbox.checked);
+  });
+}
+
+function loadcheck() {
+  // すべてのチェックボックスを取得
+  const checkboxes = document.querySelectorAll('.checkBox');
+  console.log(checkboxes);
+
+  // ローカルストレージからチェックボックスの状態を取得
+  checkboxes.forEach((checkbox, index) => {
+    const isChecked = localStorage.getItem(`checkbox${index}`) === 'true';
+    checkbox.checked = isChecked;
+
+    // チェックされている場合、clickTodoListを実行
+    if (isChecked) {
+      // 擬似的にクリックイベントを作成して渡します
+      const event = new Event('click');
+      checkbox.dispatchEvent(event);
+    }
+  });
+
+  console.log("チェックボックスの状態が復元されました！");
+}
+
+window.onload = function() {
+  setTimeout(loadcheck, 10);
+}

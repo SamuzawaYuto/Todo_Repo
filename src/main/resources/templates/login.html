@@ -13,16 +13,16 @@
 <body>
   <div></div>
   <h3 class="head_message">todoList</h3>
-  <div th:if="${param.error}" style="color:red" class="error-01">
+  <div th:if="${param.error}" th:classappend="${param.error} ? 'error' : 'hidden'">
     ユーザ名、またはパスワードが違います
   </div>
   <form th:action="@{/login}" method="post">
     <div class="loginform">
       <label for="userId"> ユーザーID：</label>
-      <input type="text" id="userId" name="username" size="50" /><br><br>
+      <input type="text" id="userId" name="username" size="40"/><br><br>
 
       <label for="password">パスワード：</label>
-      <input type="password" id="password" name="password" size="50" />
+      <input type="password" id="password" name="password" size="40"/>
 
     </div>
 
