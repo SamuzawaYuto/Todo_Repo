@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
    public TodoRepository(TodoMapper todoMapper) {
        this.todoMapper = todoMapper;
    }
-   public List<Todo> getAllTodos() {
-       return todoMapper.selectAllTodos();
+   public List<Todo> getAllTodos(String userId) {
+       return todoMapper.selectAllTodos(userId);
    }
    public void insertTodo(Todo todo) {
        todoMapper.insertTodo(todo);
@@ -28,6 +28,10 @@ import org.springframework.stereotype.Repository;
    
    public void deleteTodo(long todoId) {
         todoMapper.deleteTodoById(todoId);
+    }
+
+    public void updateTodo(Todo todo) {
+        todoMapper.updateTodo(todo);
     }
    
  }

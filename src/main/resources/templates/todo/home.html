@@ -29,7 +29,9 @@
           
             <!--<input type="checkbox" class = "checkBox" th:href="@{/home/{todoId}(todoId=${todo.todoId})}" onclick="clickTodoList(event)"><a><span th:text="${todo.title}">todo title</span><br></a>-->
             <input type="checkbox" class = "checkBox" onclick="clickTodoList(event)"> 
-            <a class="linkcolor" th:href="@{/home/{todoId}(todoId=${todo.todoId})}"><span th:text="${todo.title}">todo title</span><br></a>
+            <a class="linkcolor" th:href="@{/home/{todoId}/edit(todoId=${todo.todoId})}">
+              <span th:text="${todo.title}">todo title</span>
+              <span class="todo-date-time" th:text="${todo.date} + ' ' + ${todo.time}">date time</span><br></a>
         </li>
     </ul>
 </div>
@@ -41,6 +43,8 @@
             <!-- <input type="button" id="deleteButton" value="削除" onclick="Delete()"/> -->
         </ul>
     </div>
+
+    <input type = "button" onclick="savecheck()" value="セーブ">
 
 <script src="/script.js" type="text/javascript"></script>
   

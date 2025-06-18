@@ -17,8 +17,8 @@ public class TodoService {
         this.todoRepository = todoRepository;
     }
 
-    public List<Todo> getAllTodos() {
-        return todoRepository.getAllTodos();
+    public List<Todo> getAllTodos(String userId) {
+        return todoRepository.getAllTodos(userId);
     }
 
     public void createTodo(TodoForm todoForm, String userId) {
@@ -48,6 +48,13 @@ public class TodoService {
 
     public void deleteTodoById(Long todoId) {
         todoRepository.deleteTodo(todoId);
+    }
+
+    public void updateTodo(long todoId, Todo todo) {
+        if(todoId != todo.getTodoId()) {
+            throw new IllegalArgumentException("todoId dosen't match");
+        }
+        todoRepository.updateTodo(todo);
     }
 
 }
