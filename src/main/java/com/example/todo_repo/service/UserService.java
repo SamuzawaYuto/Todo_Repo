@@ -1,6 +1,12 @@
 package com.example.todo_repo.service;
 
 import org.springframework.stereotype.Service;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -14,6 +20,9 @@ import com.example.todo_repo.repository.UserRepository;
 public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private static final String DB_URL = "jdbc:h2:file:./sampledb";
+    private static final String USER = "sa";
+    private static final String PASS = "";
 
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder){
         this.userRepository = userRepository;
@@ -21,12 +30,29 @@ public class UserService {
     }
 
     public void createUser(UserForm userForm){
-        
+        String sql = "INSERT INTO users (userId, password, userName) VALUES (?, ?, ?)";
+
         User user = new User();
         user.setUserId(userForm.getUserId());
         String hashedPassword = passwordEncoder.encode(userForm.getPassword());
         user.setPassword(hashedPassword);
         user.setUserName("名無し");
+         try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, user.getUserId());
+            pstmt.setString(2, user.getPassword());
+            pstmt.setString(3, "名無し");
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            // ユニーク制約違反のエラーコードをチェック
+            if ("23505".equals(e.getSQLState())) {
+                System.out.println("このユーザーIDは既に登録されています");
+            } else {
+                e.printStackTrace();
+            }
+        }
         userRepository.insertUser(user);
     }
    
