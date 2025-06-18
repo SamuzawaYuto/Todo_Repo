@@ -1,4 +1,4 @@
-<!--タスク詳細-->
+<!--タスク更新-->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -22,27 +22,28 @@
   
     <p  class= "head_message">todoList</p><!--p要素に変更-->
   
-  
-     <div id = "registrationForm">
+    <form th:action="@{/home/{todoId}/edit(todoId=${todo.todoId})}" th:object="${todo}" method="post">
+    <div id = "registrationForm">
   
     <label class="label" for = "title" >タイトル : </label>
-    <input type ="text" id ="title" name="title" size = "50" th:value="${todo.title}" required/><br><br>
+    <input type ="text" id ="title" name="title" size = "50" th:field="*{title}" required/><br><br>
     
     <label class="label" for = "date" >　　日時 :</label>
-    <input type ="date" id ="date" name="date" th:value="${todo.date}"/>
-    <input type ="time" id ="time" name="time" th:value="${todo.time}"/><br><br>
+    <input type ="date" id ="date" name="date" th:field="*{date}"/>
+    <input type ="time" id ="time" name="time" th:field="*{time}"/><br><br>
     
 
     <label class="label" for = "area">　　場所 : </label>
-    <input type ="text" id = "area" name = "area" size = "50" th:value="${todo.area}"/><br><br>
+    <input type ="text" id = "area" name = "area" size = "50" th:field="*{area}"/><br><br>
     
     <label class="label" for = "url">　　URL : </label>
-    <input type ="url" id = "url" name = "url" size = "50" th:value="${todo.url}"/><br><br>
+    <input type ="url" id = "url" name = "url" size = "50" th:field="*{url}"/><br><br>
     
     <label class="label" for = "memo">　　メモ : </label>
-    <textarea id = "memo" name="memo" rows="5" cols="40" th:text="${todo.memo}" class="fixed-size"></textarea><br><br>
+    <textarea id = "memo" name="memo" rows="5" cols="40" th:field="*{memo}" class="fixed-size"></textarea><br><br>
    </div>
-  
+   <button type="submit">変更</button>
+    </form>
     <div id = Detail_return>
   <button class = "return_detail" onclick="location.href='http://localhost:8080/home'">戻る</button>
   </div>
@@ -52,7 +53,5 @@
   <footer>
    <p>@GAKU-todo</p>
    </footer>
-
-
 </body>
 </html>

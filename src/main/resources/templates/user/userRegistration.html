@@ -20,18 +20,20 @@
       <p>
         <label>
           <span>ユーザーID : </span>
-        <input type="text" id="input" name="userId" th:field="*{userId}" size="16" minlength="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}"
-          title="大文字,小文字,数字を含めた、英数字8文字以上16文字以下で入力してください。" required /><br><br>
+          <input type="text" id="input" name="userId" th:field="*{userId}" size="40" minlength="8" maxlength="16"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}" title="大文字,小文字,数字を含めた、英数字8文字以上16文字以下で入力してください。"
+            required /><br><br>
         </label>
-          <span class="errorMessage"></span>
+        <span class="errorMessage"></span>
       </p>
       <p>
         <label>
-          <span>パスワード : </span> 
-        <input type="text" id="input" name="password" th:field="*{password}" size="32" minlength="8" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}"
-          title="大文字,小文字,数字を含めた、英数字8文字以上32文字以下で入力してください。"  required /><br><br>
+          <span>パスワード : </span>
+          <input type="text" id="input" name="password" th:field="*{password}" size="40" minlength="8" maxlength="32"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}" title="大文字,小文字,数字を含めた、英数字8文字以上32文字以下で入力してください。"
+            required /><br><br>
         </label>
-          <span class="errorMessage"></span>
+        <span class="errorMessage"></span>
       </p>
     </div>
 

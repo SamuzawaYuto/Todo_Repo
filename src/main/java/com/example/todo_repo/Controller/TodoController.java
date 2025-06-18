@@ -27,8 +27,9 @@ public class TodoController {
     }
 
     @GetMapping
-    public String todos(Model model) {
-        List<Todo> todos = todoService.getAllTodos();
+    public String todos(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
+        String userId = userDetails.getUsername();
+        List<Todo> todos = todoService.getAllTodos(userId);
         model.addAttribute("todos", todos);
         return "todo/home";
     }
@@ -54,8 +55,9 @@ public class TodoController {
    }
    
     @GetMapping("/delete")
-    public String Delete(Model model){
-        List<Todo> todos = todoService.getAllTodos();
+    public String Delete(Model model, @AuthenticationPrincipal CustomUserDetails userDetails){
+        String userid = userDetails.getUsername();
+        List<Todo> todos = todoService.getAllTodos(userid);
         model.addAttribute("todos", todos);
         return "todo/taskDelete";
     }
@@ -76,6 +78,16 @@ public String Option(Model model) {
     return "todo/option";
 }
 
+@GetMapping("/{todoId}/edit")
+public String editTodo(@PathVariable long todoId, Model model) {
+    Todo todo = todoService.getTodoById(todoId);
+    model.addAttribute("todo", todo);
+    return "todo/taskEdit";
+}
 
-    
- }
+@PostMapping("/{todoId}/edit")
+public String updateTodo(@PathVariable long todoId, Todo todo) {
+    todoService.updateTodo(todoId, todo);
+    return "redirect:/home";
+}
+}

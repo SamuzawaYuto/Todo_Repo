@@ -8,11 +8,13 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
- import java.util.List;
+import org.apache.ibatis.annotations.Update;
+
+import java.util.List;
  @Mapper
  public interface TodoMapper {
-   @Select("SELECT * FROM todos LEFT JOIN users ON todos.userId = users.userId WHERE todos.userId = users.userId")
-   List<Todo> selectAllTodos();
+   @Select("SELECT * FROM todos WHERE userId = #{userId}")
+   List<Todo> selectAllTodos(String userId);
 
    @Insert("INSERT INTO todos (title, date, time, area, url, memo, userId) VALUES (#{title}, #{date}, #{time}, #{area}, #{url}, #{memo}, #{userId})")
    @Options(useGeneratedKeys = true, keyProperty = "todoId")
@@ -26,5 +28,8 @@ import org.apache.ibatis.annotations.Select;
 
    @Delete("DELETE FROM todos WHERE todo_id = #{todoId}")
     void deleteTodoById(long todoId);
+
+    @Update("UPDATE todos SET title = #{title}, date = #{date}, time = #{time}, area = #{area}, url = {url}, memo = #{memo} WHERE todo_id = #{todoId}")
+    void updateTodo(Todo todo);
   
  }
