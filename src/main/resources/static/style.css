@@ -103,6 +103,11 @@ textarea{
    margin-bottom: 5px;
    margin-right: 500px;
   padding-left: 30px;
+  /*スクロールバー*/
+    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 100px;
   
 }
 
@@ -116,6 +121,11 @@ textarea{
    margin-bottom: 5px;
    margin-right: 500px;
   padding-left: 30px;
+  /*スクロールバー*/
+    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 100px;
   
 }
 
@@ -286,16 +296,6 @@ select{
   margin-left: -25px;
 }
 
-.error{
-  color:red;
-  position: absolute;
-  top: 30%;
-  left: 37%;
-  height: 430px;
-  font-size: 20px;
-  height: 100px;
-}
-
 .hidden{
   display: none;
 }
@@ -320,6 +320,14 @@ select{
     position: absolute;
     left: 45%;
     top: 73%;
+}
+
+.saveMessage {
+  display:none;
+  position: absolute;
+  color: green;
+  top:75%;
+  left:85%;
 }
 
 .saveButtonPosition{
@@ -370,4 +378,24 @@ select{
    position: absolute;
     left: 33%;
     top: 62%;
+}
+
+.userError{
+  color:red;
+  position: absolute;
+  top: 30%;
+  left: 26%;
+  font-size: 20px;
+  height: 100px;
+  margin-top: -85px;
+}
+
+.loginError{
+  color:red;
+  position: absolute;
+  top: 30%;
+  left: 37%;
+  height: 430px;
+  font-size: 20px;
+  height: 100px;
 }
