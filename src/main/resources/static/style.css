@@ -101,7 +101,7 @@ textarea{
   
    list-style: none;
    margin-bottom: 5px;
-   margin-right: 115px;
+   margin-right: 500px;
   padding-left: 30px;
   
 }
@@ -114,7 +114,7 @@ textarea{
   
    list-style: none;
    margin-bottom: 5px;
-   margin-right: 115px;
+   margin-right: 500px;
   padding-left: 30px;
   
 }
@@ -282,7 +282,7 @@ select{
   margin-left: -25px;
 }
 
-.error{
+.loginError{
   color:red;
   position: absolute;
   top: 30%;
@@ -290,6 +290,16 @@ select{
   height: 430px;
   font-size: 20px;
   height: 100px;
+}
+
+.userError{
+  color:red;
+  position: absolute;
+  top: 30%;
+  left: 14%;
+  font-size: 20px;
+  height: 100px;
+  margin-top: -85px;
 }
 
 .hidden{
@@ -316,4 +326,23 @@ select{
   position: absolute;
     left: 46%;
     top: 56%;
+}
+
+.saveButtonPosition{
+  position: absolute;
+    left: 85%;
+    top: 77%;
+}
+
+.saveButton{
+    box-sizing: border-box;
+  width: 150px;
+  padding: 10px;
+  border: 5px solid var(--main-box-color);
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  margin-top: 20px;
+  font-size: 30px;
+  border-radius: 45px;
+  box-shadow: 3px 2px 5px var(--main-title-color);
 }

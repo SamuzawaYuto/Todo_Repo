@@ -13,7 +13,7 @@
 <body>
   <div></div>
   <h3 class="head_message">todoList</h3>
-  <div th:if="${param.error}" th:classappend="${param.error} ? 'error' : 'hidden'">
+  <div th:if="${param.error}" th:classappend="${param.error} ? 'loginError' : 'hidden'">
     ユーザ名、またはパスワードが違います
   </div>
   <form th:action="@{/login}" method="post">

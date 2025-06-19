@@ -1,0 +1,58 @@
+<!--新規登録-->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>User Registration page</title>
+  <link rel="stylesheet" href="/style.css" type="text/css" media="screen">
+
+</head>
+
+<nav>
+
+</nav>
+<h3 class="head_message">新規登録</h3>
+
+<body>
+  <form th:action="@{/user}" th:object="${userForm}" method="post" id="form">
+    <div class="loginform">
+      <div class="userError">
+        このユーザーIDは既に使用されています
+      </div>
+      <p>
+        <label>
+          <span>ユーザーID : </span>
+          <input type="text" id="input" name="userId" th:field="*{userId}" size="40" minlength="8" maxlength="16"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}" title="大文字,小文字,数字を含めた、英数字8文字以上16文字以下で入力してください。"
+            required /><br><br>
+        </label>
+        <span class="errorMessage"></span>
+      </p>
+      <p>
+        <label>
+          <span>パスワード : </span>
+          <input type="text" id="input" name="password" th:field="*{password}" size="40" minlength="8" maxlength="32"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}" title="大文字,小文字,数字を含めた、英数字8文字以上32文字以下で入力してください。"
+            required /><br><br>
+        </label>
+        <span class="errorMessage"></span>
+      </p>
+    </div>
+
+    <div id="register_registerButtonPosition">
+      <button class="registrationButton" type="submit">新規登録</button>
+    </div>
+  </form>
+  <form th:action="@{/login}" method="get">
+    <div>
+      <button class="return" type="submit">戻る</button>
+    </div>
+  </form>
+</body>
+
+<footer>
+  <p>@GAKU-todo</p>
+</footer>
+
+</html>
