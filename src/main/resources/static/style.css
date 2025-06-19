@@ -335,7 +335,7 @@ select{
 }
 
 .saveButton{
-    box-sizing: border-box;
+  box-sizing: border-box;
   width: 150px;
   padding: 10px;
   border: 5px solid var(--main-box-color);
@@ -345,4 +345,16 @@ select{
   font-size: 30px;
   border-radius: 45px;
   box-shadow: 3px 2px 5px var(--main-title-color);
+}
+
+.saveMessage {
+  display:none;
+  position: absolute;
+  color: green;
+  top:75%;
+  left:85%;
+}
+
+.saveButton:hover {
+  box-shadow: 4px 4px 10px var(--main-text-color);
 }
