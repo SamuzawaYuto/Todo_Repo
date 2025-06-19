@@ -17,6 +17,9 @@
 <body>
   <form th:action="@{/user}" th:object="${userForm}" method="post" id="form">
     <div class="loginform">
+      <div class="userError">
+        このユーザーIDは既に使用されています
+      </div>
       <p>
         <label>
           <span>ユーザーID : </span>

@@ -80,9 +80,9 @@ textarea{
     /*以下箱*/
     border: solid 8px var(--main-box-color);
     background-color: var(--main-bg-color);
-    line-height: 100px;
-    width: 10%;
-    color: var(--main-text-color);
+    line-height: 60px;
+    width: 15%;
+    Text-align: center;
 }
 
 .label{
@@ -101,7 +101,7 @@ textarea{
   
    list-style: none;
    margin-bottom: 5px;
-   margin-right: 115px;
+   margin-right: 500px;
   padding-left: 30px;
   
 }
@@ -114,7 +114,7 @@ textarea{
   
    list-style: none;
    margin-bottom: 5px;
-   margin-right: 115px;
+   margin-right: 500px;
   padding-left: 30px;
   
 }
@@ -177,16 +177,16 @@ textarea{
 .loginbutton:hover {
   box-shadow: 4px 4px 10px var(--main-text-color);
 }
-#register_registerButtonPosition{
-position: absolute;
-  left: 43%;
-  top: 73%;
+#register_registerButtonPosition {
+    position: absolute;
+    left: 44%;
+    top: 73%;
 }
 
-#createAccountButtonPosition{
-  position: absolute;
-  left: 80%;
-  top: 75%;
+#createAccountButtonPosition {
+    position: absolute;
+    left: 54%;
+    top: 64%;
 }
 .white{
   color:var(--main-white-color);
@@ -220,17 +220,21 @@ input{
 
 .Option{
   color: var(--main-text-color);
-  background-color: var(--main-bg-color);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-top: 5px;
-  width: 700px;
+    background-color: var(--main-bg-color);
+    padding-top: 5px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 780px;
+    font-size: 20px;
+
 }
 
 #option_position{
-    position: absolute;
-    left: 10%;
-    top: 15%;
+position: absolute;
+    left: 15%;
+    top: 20%;
 }
 
 select{
@@ -303,7 +307,7 @@ select{
   border: 5px solid var(--main-box-color);
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
-  margin-top: 80px;
+  margin-top: 20px;
   font-size: 30px;
   border-radius: 45px;
   box-shadow: 3px 2px 5px var(--main-title-color);
@@ -312,8 +316,58 @@ select{
   box-shadow: 4px 4px 10px var(--main-text-color);
 }
 
-#edit_Position{
+#edit_Position {
+    position: absolute;
+    left: 45%;
+    top: 73%;
+}
+
+.saveButtonPosition{
   position: absolute;
-    left: 46%;
-    top: 56%;
+    left: 85%;
+    top: 77%;
+}
+
+.saveButton{
+    box-sizing: border-box;
+  width: 150px;
+  padding: 10px;
+  border: 5px solid var(--main-box-color);
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  margin-top: 20px;
+  font-size: 30px;
+  border-radius: 45px;
+  box-shadow: 3px 2px 5px var(--main-title-color);
+}
+
+.saveButton:hover {
+  box-shadow: 4px 4px 10px var(--main-text-color);
+}
+
+  .todoItem {
+    display: flex;
+    align-items: center;
+  }
+
+  .todoItem form {
+    margin-left: 10px; /* ボタンと他のリスト要素の間に10pxの隙間を作る */
+  }
+
+.returnButtonPosition {
+    position: absolute;
+    left: 53%;
+    top: 61%;
+}
+
+.loginButtonPosition {
+    position: absolute;
+    left: 33%;
+    top: 62%;
+}
+
+#registeruser_registerButtonPosition{
+   position: absolute;
+    left: 33%;
+    top: 62%;
 }

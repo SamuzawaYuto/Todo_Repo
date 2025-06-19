@@ -11,10 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.example.todo_repo.controller.RegistrationController;
 import com.example.todo_repo.entity.User;
 import com.example.todo_repo.form.UserForm;
 import com.example.todo_repo.handler.CustomDuplicateUserException;
 import com.example.todo_repo.repository.UserRepository;
+
+import jakarta.servlet.RequestDispatcher;
 
 @Service
 public class UserService {
@@ -48,12 +51,12 @@ public class UserService {
         } catch (SQLException e) {
             // ユニーク制約違反のエラーコードをチェック
             if ("23505".equals(e.getSQLState())) {
-                System.out.println("このユーザーIDは既に登録されています");
+                throw new CustomDuplicateUserException("このユーザーIDは既に存在します。");
             } else {
                 e.printStackTrace();
             }
         }
-        userRepository.insertUser(user);
+        // userRepository.insertUser(user);
     }
    
 }

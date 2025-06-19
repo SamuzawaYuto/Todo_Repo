@@ -18,7 +18,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/user", "/login", "/style.css", "/css/**", "/js/**", "/images/**").permitAll()
+                        .requestMatchers( "/user", "/login", "/style.css", "/css/**", "/js/**", "/images/**").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()// h2-consoleでログイン無効
                         .anyRequest().authenticated())
                 // Spring 4 以降はデフォルトでCSRFが有効だが、明示的に有効にする。

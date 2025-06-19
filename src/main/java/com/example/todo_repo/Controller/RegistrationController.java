@@ -38,8 +38,8 @@ public class RegistrationController {
             userService.createUser(userForm);
             return "redirect:/login";
         } catch (CustomDuplicateUserException e) {
-            model.addAttribute("errorMessage", e.getMessage());
-            return "user/userRegistration?error";
+             model.addAttribute("errorMessage", e.getMessage());
+        return "user/userRegistration.error"; 
         }
         
     }
