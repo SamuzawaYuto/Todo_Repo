@@ -162,6 +162,8 @@ function getCheckboxes() {
 }
 
 function savecheck() {
+  var messageDiv = document.getElementById("successMessage");
+  messageDiv.style.display = "block"; // メッセージを表示
   const checkboxes = document.querySelectorAll('.checkBox');
   checkboxes.forEach((checkbox) => {
     const taskText = checkbox.parentElement.querySelector('span')?.textContent;
@@ -169,6 +171,10 @@ function savecheck() {
       localStorage.setItem(`checkbox_${taskText}`, checkbox.checked);
     }
   });
+  // 2秒後にメッセージを非表示に
+    setTimeout(function() {
+        messageDiv.style.display = "none";
+    }, 2000); // 1000ミリ秒 = 1秒
 }
 
 function loadcheck() {
