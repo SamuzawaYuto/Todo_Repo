@@ -21,22 +21,20 @@
   </nav>
 
   <p class="head_message">todoList</p>
-  <div> <!--id ="todoListWrapper"-->
-    <h1 class="ListStyle">ToDo List</h1>
-    <ul id="todoList">
-      <!-- <input type="button" id="deleteButton" value="削除" onclick="Delete()"/> -->
-      <li th:each="todo : ${todos}" th:attr="data-id=${todo.todoId}">
-        <input type="checkbox" class = "checkBox" onclick="D_clickTodoList(event)"> 
-        <a th:href="@{/home/{todoId}/edit(todoId=${todo.todoId})}">
-          <span class="linkcolor" th:text="${todo.title}">todo title</span>
-        </a>
-        <form th:action="@{/home/{todoId}/delete(todoId=${todo.todoId})}" method="post">
-          <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
-        </form>
-      </li>
-      <!--<li><input type ="checkbox" onclick="clickTodoList(event)" />study</li>-->
-    </ul>
-  </div>
+<div> <!--id ="todoListWrapper"-->
+  <h1 class="ListStyle">ToDo List</h1>
+  <ul id="todoList">
+    <li class="todoItem" th:each="todo : ${todos}" th:attr="data-id=${todo.todoId}">
+      <input type="checkbox" class="checkBox" onclick="D_clickTodoList(event)">
+      <a th:href="@{/home/{todoId}/edit(todoId=${todo.todoId})}">
+        <span class="linkcolor" th:text="${todo.title}">todo title</span>
+      </a>
+      <form th:action="@{/home/{todoId}/delete(todoId=${todo.todoId})}" method="post" style="display: inline;">
+        <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
+      </form>
+    </li>
+  </ul>
+</div>
 
   <div> <!--id="doneListWrapper"-->
     <h1 class="ListStyle">Done List</h1>
